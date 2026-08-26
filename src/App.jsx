@@ -580,6 +580,10 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
       <section id="proof" style={st("border-top:1px solid rgba(255,255,255,.07);position:relative;overflow:hidden")}>
         <div style={st("position:absolute;inset:0;background:radial-gradient(60% 55% at 50% 0%,rgba(0,125,220,.12) 0%,rgba(5,5,6,0) 70%);pointer-events:none")}></div>
         <div style={st("position:relative;max-width:1440px;margin:0 auto;padding:96px clamp(20px,2.6vw,40px)")}>
+          <div data-reveal style={st("max-width:760px;margin:0 0 48px")}>
+            <h2 style={st("margin:0;font-size:clamp(34px,4.2vw,56px);line-height:1.02;letter-spacing:-.04em;font-weight:600;text-wrap:balance")}>Proven expertise, trusted partnerships</h2>
+            <p style={st("margin:20px 0 0;font-size:18.5px;line-height:1.55;color:rgba(242,245,250,.6);text-wrap:pretty")}>Certified specialists, established alliances and a delivery track record across regulated industries.</p>
+          </div>
           {showProof !== false && (
             <>
               {/* Animated stat counters */}
@@ -587,9 +591,6 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
                 {PROOF_STATS.map((s, i) => (
                   <div key={i} data-reveal style={st("position:relative;overflow:hidden;background:linear-gradient(180deg,#0d0f13,#0a0b0e);border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:28px 28px 24px;display:flex;flex-direction:column;gap:16px;min-height:206px")}>
                     <div style={st("position:absolute;inset:0;background:radial-gradient(80% 80% at 100% 0%,rgba(0,186,235,.12) 0%,rgba(11,12,15,0) 62%);pointer-events:none")}></div>
-                    <div style={st("position:relative;display:flex;align-items:center")}>
-                      <span style={st("font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:rgba(242,245,250,.4)")}>{s.k}</span>
-                    </div>
                     <div style={st("position:relative;font:600 clamp(52px,5.4vw,74px)/1 'Funnel Display',sans-serif;letter-spacing:-.04em;background:linear-gradient(125deg,#f2f5fa 0%,#00baeb 120%);-webkit-background-clip:text;background-clip:text;color:transparent")}>
                       <CountUp to={s.to} suffix={s.suffix} />
                     </div>
@@ -648,7 +649,7 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
             </>
           )}
 
-          <p data-reveal style={st("margin:26px 0 0;font-size:13.5px;color:rgba(242,245,250,.38)")}>Backed by certified specialists, established partner relationships and a track record across regulated industries.</p>
+          <p data-reveal style={st("margin:26px 0 0;font-size:13.5px;color:rgba(242,245,250,.38)")}>Partner and alliance marks are shown for illustration and refreshed as our ecosystem grows.</p>
         </div>
       </section>
 
