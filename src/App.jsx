@@ -261,7 +261,7 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
             {wide && (
               <a href="#faq" className="hv-insights" style={st("font-size:clamp(13px,1.05vw,14.5px);color:rgba(242,245,250,.66);white-space:nowrap")}>Insights</a>
             )}
-            <a href="#contact" className="hv-cta" style={st("background:#f2f5fa;color:#050506;padding:11px 20px;border-radius:10px;font-size:clamp(13px,1.1vw,14.5px);font-weight:600;letter-spacing:-.01em;white-space:nowrap;transition:background .2s ease,color .2s ease")}>Speak to a Security Expert</a>
+            <a href="#contact" className="hv-cta m-hide-xs" style={st("background:#f2f5fa;color:#050506;padding:11px 20px;border-radius:10px;font-size:clamp(13px,1.1vw,14.5px);font-weight:600;letter-spacing:-.01em;white-space:nowrap;transition:background .2s ease,color .2s ease")}>Speak to a Security Expert</a>
           </div>
         </div>
 
@@ -333,7 +333,7 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
         ></liquid-grid>
         <div style={st("position:absolute;inset:0;z-index:1;background:radial-gradient(80% 62% at 50% 52%,rgba(5,5,6,.86) 0%,rgba(5,5,6,.55) 46%,rgba(5,5,6,.1) 78%);pointer-events:none")}></div>
         <div style={st("position:absolute;inset:0;z-index:1;background:radial-gradient(90% 60% at 50% 100%,rgba(0,125,220,.16) 0%,rgba(5,5,6,0) 70%);pointer-events:none")}></div>
-        <div style={st("position:relative;z-index:2;flex:1;max-width:1080px;margin:0 auto;padding:150px 40px 110px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center")}>
+        <div className="hero-pad" style={st("position:relative;z-index:2;flex:1;max-width:1080px;margin:0 auto;padding:150px 40px 110px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center")}>
           <div data-reveal style={st("display:flex;align-items:center;gap:10px;font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,245,250,.55)")}>
             <span style={st("width:6px;height:6px;border-radius:50%;background:#00baeb;display:block;animation:ssitPulse 2.4s ease-in-out infinite")}></span>
             Cybersecurity &amp; System Integration · UAE
@@ -357,12 +357,12 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
       </section>
 
       {/* ============ 01 — VALUE PILLARS ============ */}
-      <section style={st("max-width:1440px;margin:0 auto;padding:20px clamp(20px,2.6vw,40px) 110px")}>
+      <section id="approach" style={st("max-width:1440px;margin:0 auto;padding:20px clamp(20px,2.6vw,40px) 110px")}>
         <div data-reveal style={st("display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap")}>
           <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,245,250,.42)")}>01 — Our approach</div>
           <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:rgba(242,245,250,.28)")}>{pillarCounter}</div>
         </div>
-        <div data-reveal style={st("margin-top:32px;display:grid;grid-template-columns:minmax(280px,.9fr) minmax(0,2.1fr);gap:20px;align-items:stretch")}>
+        <div data-reveal className="pillars-grid" style={st("margin-top:32px;display:grid;grid-template-columns:minmax(280px,.9fr) minmax(0,2.1fr);gap:20px;align-items:stretch")}>
           <div style={st("display:flex;flex-direction:column;gap:12px")}>
             {PILLAR_DATA.map((p, i) => {
               const on = pillar === i
@@ -419,7 +419,7 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
                   <div style={st("position:relative;height:2px;background:rgba(255,255,255,.09);border-radius:2px")}>
                     <div style={st(`position:absolute;left:0;top:0;bottom:0;width:${cycleProgress};background:linear-gradient(90deg,#007ddc,#01f1f8);border-radius:2px;transition:width .6s cubic-bezier(.2,.7,.2,1)`)}></div>
                   </div>
-                  <div style={st("margin-top:-9px;display:grid;grid-template-columns:repeat(5,1fr)")}>
+                  <div className="lifecycle-grid" style={st("margin-top:-9px;display:grid;grid-template-columns:repeat(5,1fr)")}>
                     {STEPS.map((s, i) => {
                       const dot = i <= step ? accent : 'rgba(242,245,250,.2)'
                       const glow = i === step ? '0 0 0 5px rgba(0,186,235,.16)' : 'none'
@@ -462,7 +462,7 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
             <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(11,14,20,.5)")}>02 — What we deliver</div>
             <h2 style={st("margin:22px 0 0;font-size:clamp(34px,4.2vw,56px);line-height:1.02;letter-spacing:-.04em;font-weight:600;max-width:760px;text-wrap:balance;color:#0b0e14")}>Capability across security, infrastructure and integration</h2>
           </div>
-          <div style={st("margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px")}>
+          <div className="deliver-grid" style={st("margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px")}>
             {CAPS.map((name, i) => (
               <a key={i} href="#" data-reveal className="hv-capCardLight" style={st("background:#ffffff;border:1px solid rgba(9,17,34,.1);border-radius:18px;padding:32px 30px 28px;display:flex;flex-direction:column;gap:18px;min-height:250px;box-shadow:0 12px 30px -22px rgba(9,17,34,.4);transition:background .28s ease,border-color .28s ease,box-shadow .28s ease")}>
                 <span style={st("display:flex;gap:5px;align-items:flex-end;height:26px")}>
@@ -505,13 +505,13 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
           </div>
           <div style={st("margin-top:40px;display:flex;flex-direction:column")}>
             {OUTS.map((text, i) => (
-              <div key={i} data-reveal className="hv-outcomeRowLight" style={st("position:relative;border-top:1px solid rgba(9,17,34,.12);padding:clamp(22px,2.4vw,34px) clamp(14px,1.6vw,26px);display:grid;grid-template-columns:58px minmax(0,1fr) clamp(90px,16vw,260px);gap:clamp(16px,2.4vw,44px);align-items:center")}>
+              <div key={i} data-reveal className="hv-outcomeRowLight outcome-row" style={st("position:relative;border-top:1px solid rgba(9,17,34,.12);padding:clamp(22px,2.4vw,34px) clamp(14px,1.6vw,26px);display:grid;grid-template-columns:58px minmax(0,1fr) clamp(90px,16vw,260px);gap:clamp(16px,2.4vw,44px);align-items:center")}>
                 <span style={st(`font:500 clamp(22px,2vw,30px) 'IBM Plex Mono',monospace;letter-spacing:-.04em;color:${i === OUTS.length - 1 ? '#007ddc' : 'rgba(0,125,220,' + (0.5 + i * 0.1) + ')'};line-height:1`)}>{'0' + (i + 1)}</span>
                 <span style={st("display:flex;align-items:center;gap:clamp(14px,2vw,30px);min-width:0")}>
                   <span style={st(`width:${i * 26}px;flex:none;height:1px;background:linear-gradient(90deg,rgba(0,125,220,.25),rgba(0,186,235,.75));display:block`)}></span>
                   <span style={st("font-size:clamp(19px,1.9vw,27px);line-height:1.22;letter-spacing:-.03em;font-weight:500;color:#0b0e14;text-wrap:pretty")}>{text}</span>
                 </span>
-                <span style={st("display:flex;gap:5px;justify-content:flex-end;align-items:center")}>
+                <span className="outcome-cells" style={st("display:flex;gap:5px;justify-content:flex-end;align-items:center")}>
                   {[0, 1, 2, 3, 4].map((k) => (
                     <span key={k} style={st(`width:100%;max-width:34px;height:6px;border-radius:3px;background:${k <= i ? (k === i ? '#00baeb' : 'rgba(0,125,220,.55)') : 'rgba(9,17,34,.12)'};display:block`)}></span>
                   ))}
@@ -553,7 +553,7 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
               </div>
 
               {/* Credentials + satisfaction */}
-              <div style={st("margin-top:18px;display:grid;grid-template-columns:minmax(0,1.75fr) minmax(240px,1fr);gap:18px;align-items:stretch")}>
+              <div className="proof-cred-grid" style={st("margin-top:18px;display:grid;grid-template-columns:minmax(0,1.75fr) minmax(240px,1fr);gap:18px;align-items:stretch")}>
                 <div data-reveal style={st("background:#0b0c0f;border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:28px 28px 26px;display:flex;flex-direction:column;gap:18px")}>
                   <div style={st("display:flex;align-items:center;flex-wrap:wrap;gap:10px")}>
                     <span style={st("font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#00baeb")}>Certifications &amp; partner tiers</span>
@@ -652,7 +652,7 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
               </div>
               <h2 style={st("margin:26px 0 0;font-size:clamp(34px,4.8vw,64px);line-height:1.02;letter-spacing:-.045em;font-weight:600;text-wrap:balance")}>Speak to a Security Expert</h2>
               <p style={st("margin:22px auto 0;max-width:560px;font-size:18.5px;line-height:1.55;color:rgba(242,245,250,.62);text-wrap:pretty")}>Speak with SechPoint SSIT to discuss your environment, priorities and next steps.</p>
-              <div style={st("margin-top:38px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center")}>
+              <div className="contact-actions" style={st("margin-top:38px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center")}>
                 <a href="#contact" className="hv-heroPrimary" style={st("background:#f2f5fa;color:#050506;padding:17px 32px;border-radius:11px;font-size:16.5px;font-weight:600;letter-spacing:-.01em;transition:transform .22s ease,background .22s ease,color .22s ease")}>Speak to a Security Expert</a>
                 <a href="#deliver" className="hv-heroSecondary" style={st("background:rgba(20,21,24,.6);border:1px solid rgba(255,255,255,.14);color:#f2f5fa;padding:17px 30px;border-radius:11px;font-size:16.5px;font-weight:500;letter-spacing:-.01em;transition:background .22s ease,border-color .22s ease")}>Explore Capabilities</a>
               </div>
@@ -669,12 +669,12 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
 
       {/* ============ FOOTER ============ */}
       <footer style={st("border-top:1px solid rgba(255,255,255,.07);background:#08090b")}>
-        <div style={st("max-width:1440px;margin:0 auto;padding:76px clamp(20px,2.6vw,40px) 44px;display:grid;grid-template-columns:1.25fr 2.75fr;gap:64px")}>
+        <div className="footer-top" style={st("max-width:1440px;margin:0 auto;padding:76px clamp(20px,2.6vw,40px) 44px;display:grid;grid-template-columns:1.25fr 2.75fr;gap:64px")}>
           <div>
             <img src={LOGO} alt="SechPoint SSIT" width="164" height="40" style={st("height:40px;width:auto;display:block")} />
             <p style={st("margin:22px 0 0;font-size:14.5px;line-height:1.6;color:rgba(242,245,250,.5);max-width:360px;text-wrap:pretty")}>SechPoint SSIT helps organisations assess cyber risk, design resilient architectures, integrate security and infrastructure technologies, and improve operational readiness. Part of the SechPoint group.</p>
           </div>
-          <div style={st("display:grid;grid-template-columns:repeat(5,1fr);gap:28px")}>
+          <div className="footer-cols" style={st("display:grid;grid-template-columns:repeat(5,1fr);gap:28px")}>
             {GROUPS.map((grp) => (
               <div key={grp.label} style={st("display:flex;flex-direction:column;gap:12px")}>
                 <div style={st("font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:rgba(242,245,250,.38)")}>{grp.label}</div>

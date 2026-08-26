@@ -60,3 +60,23 @@ a.hv-capCardLight { transition: background .28s ease, border-color .28s ease, bo
 a.hv-capCardLight:hover { background: #f6faff !important; border-color: rgba(0,125,220,.4) !important; box-shadow: 0 22px 50px -26px rgba(9,17,34,.5) !important; color: #0b0e14 !important; }
 .hv-outcomeRowLight { transition: background .3s ease; }
 .hv-outcomeRowLight:hover { background: rgba(0,125,220,.07); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .pillars-grid { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 768px) {
+  .deliver-grid { grid-template-columns: 1fr !important; }
+  .proof-cred-grid { grid-template-columns: 1fr !important; }
+  .footer-top { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .footer-cols { grid-template-columns: repeat(2, 1fr) !important; gap: 26px 20px !important; }
+  .lifecycle-grid { overflow-x: auto; -webkit-overflow-scrolling: touch; grid-auto-columns: minmax(104px, 1fr); grid-auto-flow: column; grid-template-columns: none !important; padding-bottom: 8px; }
+  .outcome-row { grid-template-columns: 40px minmax(0, 1fr) !important; gap: 14px !important; }
+  .outcome-cells { display: none !important; }
+  .contact-actions { flex-direction: column; }
+  .contact-actions a { width: 100%; }
+}
+@media (max-width: 560px) {
+  .m-hide-xs { display: none !important; }
+  .hero-pad { padding-left: 22px !important; padding-right: 22px !important; }
+}
