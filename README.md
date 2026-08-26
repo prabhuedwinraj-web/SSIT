@@ -1,6 +1,8 @@
 # SechPoint SSIT — Homepage (React)
 
-React (Vite) port of the `SSIT Homepage v2.dc` design canvas.
+React (Vite) port of the `SSIT Homepage v2.dc` design canvas. The app lives at
+the repository root (so Vercel and other hosts auto-detect Vite); the original
+design canvas, assets and content spec are kept in [`design-source/`](design-source/).
 
 ## Run
 
@@ -25,6 +27,14 @@ npm run preview  # serve the production build
 - `src/index.css` — fonts, scroll-reveal animation, keyframes, and the
   `:hover` rules that replace the design's `style-hover` attribute.
 - `public/assets/sechpoint-logo.svg` — brand logo.
+- `design-source/` — original `.dc` design canvas, reference screenshots
+  and the content specification.
+
+## Deploy (Vercel)
+
+Import the repo — Vercel auto-detects Vite. Leave **Root Directory** empty
+(repo root), Framework Preset **Vite**, Build Command `npm run build`,
+Output Directory `dist`. No `vercel.json` is needed.
 
 ## Sections (in order)
 

@@ -1,10 +1,8 @@
 # Dependencies
 node_modules/
-ssit-react/node_modules/
 
 # Build output
 dist/
-ssit-react/dist/
 
 # Logs
 *.log
