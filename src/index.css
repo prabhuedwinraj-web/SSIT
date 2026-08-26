@@ -54,3 +54,9 @@ a.hv-capCard:hover { background: #12141a !important; border-color: rgba(0,186,23
 
 .hv-outcomeRow { transition: background .3s ease; }
 .hv-outcomeRow:hover { background: rgba(0,125,220,.06); }
+
+/* ---- Light-theme sections (What we deliver / Business outcomes) ---- */
+a.hv-capCardLight { transition: background .28s ease, border-color .28s ease, box-shadow .28s ease; }
+a.hv-capCardLight:hover { background: #f6faff !important; border-color: rgba(0,125,220,.4) !important; box-shadow: 0 22px 50px -26px rgba(9,17,34,.5) !important; color: #0b0e14 !important; }
+.hv-outcomeRowLight { transition: background .3s ease; }
+.hv-outcomeRowLight:hover { background: rgba(0,125,220,.07); }

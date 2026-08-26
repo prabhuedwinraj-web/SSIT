@@ -456,22 +456,22 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
       </section>
 
       {/* ============ 02 — WHAT WE DELIVER ============ */}
-      <section id="deliver" style={st("border-top:1px solid rgba(255,255,255,.07)")}>
+      <section id="deliver" style={st("border-top:1px solid rgba(9,17,34,.1);background:#eef1f6")}>
         <div style={st("max-width:1440px;margin:0 auto;padding:110px clamp(20px,2.6vw,40px)")}>
           <div data-reveal>
-            <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,245,250,.42)")}>02 — What we deliver</div>
-            <h2 style={st("margin:22px 0 0;font-size:clamp(34px,4.2vw,56px);line-height:1.02;letter-spacing:-.04em;font-weight:600;max-width:760px;text-wrap:balance")}>Capability across security, infrastructure and integration</h2>
+            <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(11,14,20,.5)")}>02 — What we deliver</div>
+            <h2 style={st("margin:22px 0 0;font-size:clamp(34px,4.2vw,56px);line-height:1.02;letter-spacing:-.04em;font-weight:600;max-width:760px;text-wrap:balance;color:#0b0e14")}>Capability across security, infrastructure and integration</h2>
           </div>
           <div style={st("margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px")}>
             {CAPS.map((name, i) => (
-              <a key={i} href="#" data-reveal className="hv-capCard" style={st("background:#0d0e11;border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:32px 30px 28px;display:flex;flex-direction:column;gap:18px;min-height:250px;transition:background .28s ease,border-color .28s ease")}>
+              <a key={i} href="#" data-reveal className="hv-capCardLight" style={st("background:#ffffff;border:1px solid rgba(9,17,34,.1);border-radius:18px;padding:32px 30px 28px;display:flex;flex-direction:column;gap:18px;min-height:250px;box-shadow:0 12px 30px -22px rgba(9,17,34,.4);transition:background .28s ease,border-color .28s ease,box-shadow .28s ease")}>
                 <span style={st("display:flex;gap:5px;align-items:flex-end;height:26px")}>
                   <span style={st(`width:7px;height:${BARS[i][0]};background:#007ddc;display:block;border-radius:2px`)}></span>
                   <span style={st(`width:7px;height:${BARS[i][1]};background:#00baeb;display:block;border-radius:2px`)}></span>
-                  <span style={st(`width:7px;height:${BARS[i][2]};background:rgba(242,245,250,.2);display:block;border-radius:2px`)}></span>
+                  <span style={st(`width:7px;height:${BARS[i][2]};background:rgba(9,17,34,.18);display:block;border-radius:2px`)}></span>
                 </span>
-                <span style={st("font-size:22px;line-height:1.2;letter-spacing:-.028em;font-weight:600;flex:1")}>{name}</span>
-                <span style={st("font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#00baeb")}>EXPLORE →</span>
+                <span style={st("font-size:22px;line-height:1.2;letter-spacing:-.028em;font-weight:600;flex:1;color:#0b0e14")}>{name}</span>
+                <span style={st("font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#0072cc")}>EXPLORE →</span>
               </a>
             ))}
           </div>
@@ -479,9 +479,9 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
       </section>
 
       {/* ============ DELIVERY VISUAL ============ */}
-      <section id="delivervisual" style={st("border-top:1px solid rgba(255,255,255,.07)")}>
-        <div style={st("max-width:1440px;margin:0 auto;padding:96px clamp(20px,2.6vw,40px)")}>
-          <div data-reveal style={st("position:relative;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.09)")}>
+      <section id="delivervisual" style={st("background:#eef1f6")}>
+        <div style={st("max-width:1440px;margin:0 auto;padding:0 clamp(20px,2.6vw,40px) 96px")}>
+          <div data-reveal style={st("position:relative;border-radius:22px;overflow:hidden;border:1px solid rgba(9,17,34,.14);box-shadow:0 30px 70px -40px rgba(9,17,34,.5)")}>
             <img src="assets/deliver-visual.jpg" alt="A security engineer reviewing code late at night, with source files projected around the workspace" loading="lazy" style={st("width:100%;height:clamp(320px,44vw,560px);object-fit:cover;object-position:center 30%;display:block")} />
             <div style={st("position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,6,.15) 0%,rgba(5,5,6,.1) 40%,rgba(5,5,6,.82) 100%);pointer-events:none")}></div>
             <div style={st("position:absolute;inset:0;background:radial-gradient(70% 90% at 12% 100%,rgba(0,125,220,.28) 0%,rgba(5,5,6,0) 62%);pointer-events:none")}></div>
@@ -497,28 +497,28 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
       </section>
 
       {/* ============ 03 — BUSINESS OUTCOMES ============ */}
-      <section style={st("border-top:1px solid rgba(255,255,255,.07)")}>
+      <section id="outcomes" style={st("border-top:1px solid rgba(9,17,34,.1);background:#eef1f6")}>
         <div style={st("max-width:1440px;margin:0 auto;padding:110px clamp(20px,2.6vw,40px)")}>
           <div data-reveal style={st("display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap")}>
-            <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,245,250,.42)")}>03 — Business outcomes</div>
-            <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:rgba(242,245,250,.28)")}>ASSESSMENT → CONTINUOUS IMPROVEMENT</div>
+            <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(11,14,20,.5)")}>03 — Business outcomes</div>
+            <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:rgba(11,14,20,.35)")}>ASSESSMENT → CONTINUOUS IMPROVEMENT</div>
           </div>
           <div style={st("margin-top:40px;display:flex;flex-direction:column")}>
             {OUTS.map((text, i) => (
-              <div key={i} data-reveal className="hv-outcomeRow" style={st("position:relative;border-top:1px solid rgba(255,255,255,.09);padding:clamp(22px,2.4vw,34px) clamp(14px,1.6vw,26px);display:grid;grid-template-columns:58px minmax(0,1fr) clamp(90px,16vw,260px);gap:clamp(16px,2.4vw,44px);align-items:center")}>
-                <span style={st(`font:500 clamp(22px,2vw,30px) 'IBM Plex Mono',monospace;letter-spacing:-.04em;color:${i === OUTS.length - 1 ? accent : 'rgba(0,125,220,' + (0.45 + i * 0.12) + ')'};line-height:1`)}>{'0' + (i + 1)}</span>
+              <div key={i} data-reveal className="hv-outcomeRowLight" style={st("position:relative;border-top:1px solid rgba(9,17,34,.12);padding:clamp(22px,2.4vw,34px) clamp(14px,1.6vw,26px);display:grid;grid-template-columns:58px minmax(0,1fr) clamp(90px,16vw,260px);gap:clamp(16px,2.4vw,44px);align-items:center")}>
+                <span style={st(`font:500 clamp(22px,2vw,30px) 'IBM Plex Mono',monospace;letter-spacing:-.04em;color:${i === OUTS.length - 1 ? '#007ddc' : 'rgba(0,125,220,' + (0.5 + i * 0.1) + ')'};line-height:1`)}>{'0' + (i + 1)}</span>
                 <span style={st("display:flex;align-items:center;gap:clamp(14px,2vw,30px);min-width:0")}>
-                  <span style={st(`width:${i * 26}px;flex:none;height:1px;background:linear-gradient(90deg,rgba(0,125,220,.15),rgba(0,186,235,.6));display:block`)}></span>
-                  <span style={st("font-size:clamp(19px,1.9vw,27px);line-height:1.22;letter-spacing:-.03em;font-weight:500;color:#f2f5fa;text-wrap:pretty")}>{text}</span>
+                  <span style={st(`width:${i * 26}px;flex:none;height:1px;background:linear-gradient(90deg,rgba(0,125,220,.25),rgba(0,186,235,.75));display:block`)}></span>
+                  <span style={st("font-size:clamp(19px,1.9vw,27px);line-height:1.22;letter-spacing:-.03em;font-weight:500;color:#0b0e14;text-wrap:pretty")}>{text}</span>
                 </span>
                 <span style={st("display:flex;gap:5px;justify-content:flex-end;align-items:center")}>
                   {[0, 1, 2, 3, 4].map((k) => (
-                    <span key={k} style={st(`width:100%;max-width:34px;height:6px;border-radius:3px;background:${k <= i ? (k === i ? accent : 'rgba(0,125,220,.55)') : 'rgba(255,255,255,.08)'};display:block`)}></span>
+                    <span key={k} style={st(`width:100%;max-width:34px;height:6px;border-radius:3px;background:${k <= i ? (k === i ? '#00baeb' : 'rgba(0,125,220,.55)') : 'rgba(9,17,34,.12)'};display:block`)}></span>
                   ))}
                 </span>
               </div>
             ))}
-            <div style={st("border-top:1px solid rgba(255,255,255,.09)")}></div>
+            <div style={st("border-top:1px solid rgba(9,17,34,.12)")}></div>
           </div>
         </div>
       </section>
