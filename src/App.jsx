@@ -553,8 +553,12 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
       {/* ============ 03 — BUSINESS OUTCOMES ============ */}
       <section id="outcomes" style={st("border-top:1px solid rgba(9,17,34,.1);background:#eef1f6")}>
         <div style={st("max-width:1440px;margin:0 auto;padding:110px clamp(20px,2.6vw,40px)")}>
-          <div data-reveal style={st("display:flex;justify-content:flex-end;align-items:baseline;gap:24px;flex-wrap:wrap")}>
-            <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:rgba(11,14,20,.35)")}>ASSESSMENT → CONTINUOUS IMPROVEMENT</div>
+          <div data-reveal style={st("display:flex;justify-content:space-between;align-items:flex-end;gap:24px 32px;flex-wrap:wrap")}>
+            <div style={st("max-width:640px")}>
+              <h2 style={st("margin:0;font-size:clamp(34px,4.2vw,56px);line-height:1.02;letter-spacing:-.04em;font-weight:600;color:#0b0e14;text-wrap:balance")}>Outcomes that move the business forward</h2>
+              <p style={st("margin:20px 0 0;font-size:18.5px;line-height:1.55;color:rgba(11,14,20,.6);text-wrap:pretty")}>From clearer risk visibility to a defined path of continuous improvement.</p>
+            </div>
+            <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:rgba(11,14,20,.35);white-space:nowrap")}>ASSESSMENT → CONTINUOUS IMPROVEMENT</div>
           </div>
           <div style={st("margin-top:40px;display:flex;flex-direction:column")}>
             {OUTS.map((text, i) => (
