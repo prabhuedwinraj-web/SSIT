@@ -358,8 +358,7 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
 
       {/* ============ 01 — VALUE PILLARS ============ */}
       <section id="approach" style={st("max-width:1440px;margin:0 auto;padding:20px clamp(20px,2.6vw,40px) 110px")}>
-        <div data-reveal style={st("display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap")}>
-          <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,245,250,.42)")}>01 — Our approach</div>
+        <div data-reveal style={st("display:flex;justify-content:flex-end;align-items:baseline;gap:24px;flex-wrap:wrap")}>
           <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:rgba(242,245,250,.28)")}>{pillarCounter}</div>
         </div>
         <div data-reveal className="pillars-grid" style={st("margin-top:32px;display:grid;grid-template-columns:minmax(280px,.9fr) minmax(0,2.1fr);gap:20px;align-items:stretch")}>
@@ -459,8 +458,7 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
       <section id="deliver" style={st("border-top:1px solid rgba(9,17,34,.1);background:#eef1f6")}>
         <div style={st("max-width:1440px;margin:0 auto;padding:110px clamp(20px,2.6vw,40px)")}>
           <div data-reveal>
-            <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(11,14,20,.5)")}>02 — What we deliver</div>
-            <h2 style={st("margin:22px 0 0;font-size:clamp(34px,4.2vw,56px);line-height:1.02;letter-spacing:-.04em;font-weight:600;max-width:760px;text-wrap:balance;color:#0b0e14")}>Capability across security, infrastructure and integration</h2>
+            <h2 style={st("margin:0;font-size:clamp(34px,4.2vw,56px);line-height:1.02;letter-spacing:-.04em;font-weight:600;max-width:760px;text-wrap:balance;color:#0b0e14")}>Capability across security, infrastructure and integration</h2>
           </div>
           <div className="deliver-grid" style={st("margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px")}>
             {CAPS.map((name, i) => (
@@ -499,8 +497,7 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
       {/* ============ 03 — BUSINESS OUTCOMES ============ */}
       <section id="outcomes" style={st("border-top:1px solid rgba(9,17,34,.1);background:#eef1f6")}>
         <div style={st("max-width:1440px;margin:0 auto;padding:110px clamp(20px,2.6vw,40px)")}>
-          <div data-reveal style={st("display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap")}>
-            <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(11,14,20,.5)")}>03 — Business outcomes</div>
+          <div data-reveal style={st("display:flex;justify-content:flex-end;align-items:baseline;gap:24px;flex-wrap:wrap")}>
             <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:rgba(11,14,20,.35)")}>ASSESSMENT → CONTINUOUS IMPROVEMENT</div>
           </div>
           <div style={st("margin-top:40px;display:flex;flex-direction:column")}>
@@ -527,14 +524,10 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
       <section id="proof" style={st("border-top:1px solid rgba(255,255,255,.07);position:relative;overflow:hidden")}>
         <div style={st("position:absolute;inset:0;background:radial-gradient(60% 55% at 50% 0%,rgba(0,125,220,.12) 0%,rgba(5,5,6,0) 70%);pointer-events:none")}></div>
         <div style={st("position:relative;max-width:1440px;margin:0 auto;padding:96px clamp(20px,2.6vw,40px)")}>
-          <div data-reveal style={st("display:flex;align-items:baseline;gap:14px;flex-wrap:wrap")}>
-            <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,245,250,.42)")}>04 — Proof</div>
-          </div>
-
           {showProof !== false && (
             <>
               {/* Animated stat counters */}
-              <div style={st("margin-top:38px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px")}>
+              <div style={st("display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px")}>
                 {PROOF_STATS.map((s, i) => (
                   <div key={i} data-reveal style={st("position:relative;overflow:hidden;background:linear-gradient(180deg,#0d0f13,#0a0b0e);border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:28px 28px 24px;display:flex;flex-direction:column;gap:16px;min-height:206px")}>
                     <div style={st("position:absolute;inset:0;background:radial-gradient(80% 80% at 100% 0%,rgba(0,186,235,.12) 0%,rgba(11,12,15,0) 62%);pointer-events:none")}></div>
@@ -606,8 +599,7 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
       {/* ============ 05 — FAQ ============ */}
       <section id="faq" style={st("border-top:1px solid rgba(255,255,255,.07)")}>
         <div style={st("max-width:1080px;margin:0 auto;padding:110px 40px")}>
-          <div data-reveal style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,245,250,.42)")}>05 — Frequently asked questions</div>
-          <div style={st("margin-top:34px;border-top:1px solid rgba(255,255,255,.1)")}>
+          <div style={st("border-top:1px solid rgba(255,255,255,.1)")}>
             {FAQ_DATA.map(([q, a], i) => {
               const on = faq === i
               return (
