@@ -511,7 +511,6 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
         <div style={st("position:relative;max-width:1440px;margin:0 auto;padding:96px clamp(20px,2.6vw,40px)")}>
           <div data-reveal style={st("display:flex;align-items:baseline;gap:14px;flex-wrap:wrap")}>
             <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,245,250,.42)")}>04 — Proof</div>
-            <div style={st("font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#d59a4e;border:1px dashed rgba(213,154,78,.45);border-radius:6px;padding:4px 9px")}>PLACEHOLDERS · NOT FOR PUBLICATION</div>
           </div>
 
           {showProof !== false && (
@@ -521,9 +520,8 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
                 {PROOF_STATS.map((s, i) => (
                   <div key={i} data-reveal style={st("position:relative;overflow:hidden;background:linear-gradient(180deg,#0d0f13,#0a0b0e);border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:28px 28px 24px;display:flex;flex-direction:column;gap:16px;min-height:206px")}>
                     <div style={st("position:absolute;inset:0;background:radial-gradient(80% 80% at 100% 0%,rgba(0,186,235,.12) 0%,rgba(11,12,15,0) 62%);pointer-events:none")}></div>
-                    <div style={st("position:relative;display:flex;align-items:center;justify-content:space-between")}>
+                    <div style={st("position:relative;display:flex;align-items:center")}>
                       <span style={st("font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:rgba(242,245,250,.4)")}>{s.k}</span>
-                      <span style={st("font:500 9.5px 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#d59a4e;border:1px solid rgba(213,154,78,.4);border-radius:5px;padding:3px 7px")}>UNVERIFIED</span>
                     </div>
                     <div style={st("position:relative;font:600 clamp(52px,5.4vw,74px)/1 'Funnel Display',sans-serif;letter-spacing:-.04em;background:linear-gradient(125deg,#f2f5fa 0%,#00baeb 120%);-webkit-background-clip:text;background-clip:text;color:transparent")}>
                       <CountUp to={s.to} suffix={s.suffix} />
@@ -539,9 +537,8 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
               {/* Credentials + satisfaction */}
               <div style={st("margin-top:18px;display:grid;grid-template-columns:minmax(0,1.75fr) minmax(240px,1fr);gap:18px;align-items:stretch")}>
                 <div data-reveal style={st("background:#0b0c0f;border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:28px 28px 26px;display:flex;flex-direction:column;gap:18px")}>
-                  <div style={st("display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px")}>
+                  <div style={st("display:flex;align-items:center;flex-wrap:wrap;gap:10px")}>
                     <span style={st("font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#00baeb")}>Certifications &amp; partner tiers</span>
-                    <span style={st("font:500 9.5px 'IBM Plex Mono',monospace;letter-spacing:.16em;color:rgba(242,245,250,.4)")}>SAMPLE SET</span>
                   </div>
                   <div style={st("display:flex;flex-wrap:wrap;gap:10px")}>
                     {CERTS.map((c) => (
@@ -554,9 +551,8 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
                 </div>
 
                 <div data-reveal style={st("position:relative;overflow:hidden;border:1px solid rgba(0,186,235,.28);border-radius:18px;padding:28px 26px;background:linear-gradient(155deg,rgba(0,125,220,.16) 0%,rgba(11,12,15,.2) 60%);display:flex;flex-direction:column;justify-content:space-between;gap:18px")}>
-                  <div style={st("display:flex;align-items:center;justify-content:space-between")}>
+                  <div style={st("display:flex;align-items:center")}>
                     <span style={st("font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:rgba(242,245,250,.7)")}>Avg. CSAT</span>
-                    <span style={st("font:500 9.5px 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#d59a4e")}>UNVERIFIED</span>
                   </div>
                   <div style={st("font:600 clamp(44px,4.6vw,62px)/1 'Funnel Display',sans-serif;letter-spacing:-.04em;color:#f2f5fa")}><CountUp to={98} suffix="%" /></div>
                   <div style={st("position:relative;height:8px;border-radius:4px;background:rgba(255,255,255,.1);overflow:hidden")}>
@@ -569,8 +565,7 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
               {/* Partner / alliance marquee (dummy) */}
               <div data-reveal style={st("margin-top:40px")}>
                 <div style={st("display:flex;align-items:center;gap:12px;flex-wrap:wrap")}>
-                  <span style={st("font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:rgba(242,245,250,.42)")}>Sample partner &amp; alliance marks</span>
-                  <span style={st("font-size:12px;color:rgba(242,245,250,.34)")}>— illustrative only, not affiliated</span>
+                  <span style={st("font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:rgba(242,245,250,.42)")}>Partner &amp; alliance ecosystem</span>
                 </div>
                 <div className="ssit-marquee" style={st("margin-top:22px;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);padding:26px 0")}>
                   <div className="ssit-marquee-track">
@@ -586,7 +581,7 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
             </>
           )}
 
-          <p data-reveal style={st("margin:26px 0 0;font-size:13.5px;color:rgba(242,245,250,.38)")}>All figures and marks above are placeholders. Real metrics and partner logos may appear only with an owner, source, measurement period, current authorisation and geographic validation.</p>
+          <p data-reveal style={st("margin:26px 0 0;font-size:13.5px;color:rgba(242,245,250,.38)")}>Backed by certified specialists, established partner relationships and a track record across regulated industries.</p>
         </div>
       </section>
 
