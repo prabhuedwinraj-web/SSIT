@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+ssit-react/node_modules/
+
+# Build output
+dist/
+ssit-react/dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Local Claude preview config
+.claude/

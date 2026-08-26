@@ -1,0 +1,108 @@
+SechPoint SSIT
+Homepage Design Content
+Section-by-section content specification for design and development • Prepared from SechPoint_SSIT_Content_D1 • August 2026
+This document arranges the approved homepage copy into the order and structure a designer or developer needs to build the page. Each section gives the layout intent, the exact copy, and any conditions on publication. Source: SechPoint SSIT Complete Website Content (D1). British English throughout; confident executive tone; business outcomes lead, technical capability follows.
+0. Page metadata (SEO)
+URL
+https://ssit.sechpoint.com/
+Title tag
+Cybersecurity &amp; System Integration UAE | SechPoint SSIT
+Meta description
+Strengthen cyber resilience with advisory, integration, managed security and secure infrastructure services from SechPoint SSIT.
+Primary topic
+cybersecurity system integrator UAE
+H1 (one per page)
+Secure transformation. Integrated with precision.
+
+1. Header and primary navigation
+Design note: Sticky header with logo left, five menu groups with dropdowns, and a persistent primary CTA button on the right (“Speak to a Security Expert”). All links must be crawlable HTML on desktop and mobile.
+Cybersecurity
+Endpoint &amp; Device • Email &amp; Communication • Network &amp; Infrastructure • Data &amp; Identity • Threat Intelligence • Security Analytics • AI Security
+Services
+Cyber Advisory • Security Assessments • Architecture • Implementation &amp; Integration • Managed Security • Incident Readiness • Compliance Enablement • Support
+Digital Infrastructure
+HCI &amp; Private Cloud • Virtualisation • Data Centre • Backup &amp; Disaster Recovery
+Industry Solutions
+UAE e-Invoicing • Government • Financial Services • Healthcare • Energy • Enterprise
+Company
+About • Delivery Model • Partners • Insights • Events • Contact
+
+2. Hero section
+Design note: Full-width hero. Headline, one supporting paragraph, two CTAs (primary solid, secondary outline). Optimise hero media for LCP ≤ 2.5 s — avoid heavy video; reserve dimensions to prevent layout shift.
+Headline (H1)
+Secure transformation. Integrated with precision.
+Supporting copy
+SechPoint SSIT brings cybersecurity, infrastructure and integration together — helping organisations reduce risk, strengthen resilience and move from strategy to secure operations.
+Calls to action
+Primary CTA — Speak to a Security Expert
+Secondary CTA — Explore Related Capabilities
+3. Opening statement
+Design note: Short centred prose band directly under the hero — the problem framing. No imagery required; generous white space.
+Modern enterprises rarely struggle because they lack technology. They struggle because controls are fragmented, visibility is incomplete and platforms do not work together as one operating model. SechPoint SSIT helps close that gap through advisory, architecture, implementation, managed services and lifecycle support.
+4. Value pillars (three-column band)
+Design note: Three side-by-side cards or alternating image/text rows. Each pillar has a short heading and one paragraph.
+Pillar 1
+From fragmented tools to coordinated resilience
+We align people, process and technology around the assets and business services that matter most. Our approach connects security controls, infrastructure and operational workflows so customers can make informed decisions and respond with greater confidence.
+Pillar 2
+A practical framework for cyber defence
+We support the security lifecycle across Identify, Protect, Detect, Respond and Recover — from asset visibility and access control to analytics, incident readiness and recovery planning.
+Design note: Pillar 2 suits a five-step visual (Identify → Protect → Detect → Respond → Recover).
+Pillar 3
+Built around your environment
+Our vendor-agnostic approach starts with business priorities, existing investments and risk. We then design an architecture and delivery roadmap suited to the organisation rather than forcing a predetermined technology stack.
+5. What we deliver (capability grid)
+Design note: Six-card grid (3×2 desktop, stacked mobile), each card with an icon, the capability name, and a link to its page.
+Cyber advisory and security assessments
+Security architecture, implementation and integration
+Endpoint, email, network, data and identity security
+Threat intelligence, analytics and managed security
+HCI, private cloud, virtualisation and disaster recovery
+AI security governance and protection
+6. Business outcomes
+Design note: Outcome strip — five short statements, e.g. numbered horizontal band or checklist beside supporting imagery.
+Clearer understanding of exposure and priorities
+Integrated controls across users, data, applications and infrastructure
+Faster, more consistent security operations
+Scalable architecture aligned to business growth
+A defined path from assessment through continuous improvement
+7. Proof strip (placeholders — do not publish unverified)
+Design note: Statistics band. Every figure below is a placeholder: publication control requires an owner, source, measurement period and approval date for each metric. Do not replace placeholders with estimates.
+[Verified number] certified specialists
+[Verified number] completed projects
+[Verified number] countries supported
+[Approved certifications and partner tiers]
+[Approved customer satisfaction or service metric]
+Partner logos may appear here only with current authorisation and geographic validation.
+8. Frequently asked questions
+Design note: Accordion component. Three approved Q&amp;As; each answer stays visible to crawlers (HTML, not JS-injected).
+Question 1
+Does SechPoint SSIT work with existing security investments?
+Yes. Engagements can begin with the current environment, identify gaps and integrate or optimise existing platforms before recommending additional controls.
+Question 2
+Can SSIT support both cybersecurity and infrastructure projects?
+Yes. The SSIT proposition connects security architecture with infrastructure, cloud, virtualisation and operational requirements.
+Question 3
+How does an engagement begin?
+Most engagements begin with a discovery session to understand scope, business priorities, current architecture, risk and desired outcomes.
+9. Closing call to action
+Design note: Full-width closing band on a dark background with a single primary button.
+Heading
+Speak to a Security Expert
+Supporting copy
+Speak with SechPoint SSIT to discuss your environment, priorities and next steps.
+Recommended internal links beneath the band
+Cybersecurity • Services • Digital Infrastructure • Industry Solutions • Contact
+10. Footer
+Design note: Global footer: company statement, navigation columns mirroring the primary menu, legal links (Privacy Policy, Cookie Policy, Support) and the official legal name — the legal entity name still requires SechPoint confirmation.
+Footer statement
+SechPoint SSIT helps organisations assess cyber risk, design resilient architectures, integrate security and infrastructure technologies, and improve operational readiness. Part of the SechPoint group.
+11. Content and build guardrails
+Lead with business outcomes; follow with technical capability.
+Mention AI only where a specific function can be explained (behavioural analytics, correlation, orchestration, anomaly detection).
+No “leading”, “best”, “24/7” or performance claims without evidence and operational approval.
+British English, short sentences, confident executive tone.
+Statistics from the source presentation must be revalidated against current primary sources before publication.
+Performance targets: LCP ≤ 2.5 s; INP ≤ 200 ms; CLS ≤ 0.1. Reserve media dimensions, limit third-party scripts, stabilise fonts.
+One canonical indexable URL; unique title, meta description and single H1; breadcrumbs with BreadcrumbList structured data; Organization schema where eligible; correct Open Graph metadata.
+Suggested page order: Header → Hero → Opening statement → Value pillars → What we deliver → Business outcomes → Proof strip → FAQ → Closing CTA → Footer.

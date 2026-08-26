@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"><style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f4f1;color:#14171a;font-family:"Funnel Display",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#14171a;text-decoration:none}
+a:hover{color:#0d6fb8}
+[data-reveal]{transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+[data-reveal].pre{opacity:0;transform:translateY(16px)}
+@media (prefers-reduced-motion:reduce){[data-reveal].pre{opacity:1;transform:none;transition:none}}
+@keyframes ssitPulse{0%,100%{opacity:.25}50%{opacity:1}}
+</style></helmet>
+
+<div style="min-height:100vh">
+
+<header style="position:sticky;top:0;z-index:60;background:rgba(0,8,28,.82);backdrop-filter:blur(16px);border-bottom:1px solid rgba(239,245,255,.1)" onMouseLeave="{{ closeMenu }}">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,3vw,40px);height:74px;display:flex;align-items:center;gap:clamp(18px,2.6vw,44px);min-width:0">
+    <a href="#top" style="display:flex;align-items:center;gap:12px;flex:none">
+      <img src="assets/sechpoint-logo.svg" alt="SechPoint" width="127" height="31" style="height:31px;width:auto;display:block">
+      <span style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#00baeb;padding:4px 7px;border:1px solid rgba(0,186,235,.4);border-radius:5px">SSIT</span>
+    </a>
+    <nav style="display:flex;gap:clamp(10px,1.5vw,26px);align-items:center;flex:1;min-width:0;overflow:visible">
+      <sc-for list="{{ navGroups }}" as="g" hint-placeholder-count="5">
+        <button type="button" onMouseEnter="{{ g.open }}" onFocus="{{ g.open }}" style="border:0;background:none;padding:26px 0;font:500 clamp(11.5px,1.05vw,14.5px) 'Funnel Display',sans-serif;color:rgba(239,245,255,.72);cursor:pointer;letter-spacing:-.012em;position:relative;white-space:nowrap;flex:0 1 auto;transition:color .2s ease" style-hover="color:#eff5ff">
+          {{ g.label }}
+          <span style="position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,#007ddc,#01f1f8);transform:scaleX({{ g.active }});transition:transform .25s ease;transform-origin:left"></span>
+        </button>
+      </sc-for>
+    </nav>
+    <a href="#contact" style="flex:none;background:linear-gradient(100deg,#007ddc,#00baeb);color:#00081c;padding:11px clamp(14px,1.6vw,20px);border-radius:999px;font-size:clamp(13px,1.15vw,14px);white-space:nowrap;font-weight:600;letter-spacing:-.01em;transition:box-shadow .22s ease" style-hover="box-shadow:0 10px 26px -12px rgba(0,186,235,.9);color:#00081c">Speak to a Security Expert</a>
+  </div>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="border-top:1px solid rgba(239,245,255,.08);background:rgba(0,8,28,.96);backdrop-filter:blur(16px);box-shadow:0 24px 44px -28px rgba(0,8,28,.9)">
+      <div style="max-width:1280px;margin:0 auto;padding:26px 40px 32px;display:flex;gap:56px">
+        <div style="width:210px;flex:none">
+          <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#00baeb">{{ menuLabel }}</div>
+          <p style="margin:10px 0 0;font-size:13.5px;line-height:1.5;color:rgba(239,245,255,.55)">{{ menuBlurb }}</p>
+        </div>
+        <div style="flex:1;display:grid;grid-template-columns:repeat(4,1fr);gap:4px 28px">
+          <sc-for list="{{ menuItems }}" as="item" hint-placeholder-count="8">
+            <a href="#" style="padding:10px 12px;margin-left:-12px;border-radius:8px;font-size:14.5px;color:rgba(239,245,255,.82);transition:background .18s ease,color .18s ease" style-hover="background:rgba(1,140,198,.16);color:#01f1f8">{{ item }}</a>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</header>
+
+<section id="top" style="position:relative;background:#00081c;overflow:hidden;isolation:isolate;min-height:100vh;margin-top:-74px;display:flex">
+  <x-import component-from-global-scope="wave-arcs" from="./wave-arcs.js" background-color="#00081c" line-color="#018CC6" line-width="1.5" line-count="76" speed="6" glow="10" hint-size="100%,100%" style="position:absolute;inset:0;width:100%;height:100%;z-index:0"></x-import>
+  <div style="position:absolute;inset:0;z-index:1;background:radial-gradient(120% 80% at 50% 8%,rgba(0,8,28,.2) 0%,rgba(0,8,28,.72) 58%,rgba(0,8,28,.94) 100%);pointer-events:none"></div>
+  <div style="position:relative;z-index:2;flex:1;max-width:960px;margin:0 auto;padding:150px 40px 110px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center">
+    <div data-reveal style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#01f1f8;display:flex;align-items:center;gap:10px">
+      <span style="width:6px;height:6px;border-radius:50%;background:#01f1f8;display:block;animation:ssitPulse 2.4s ease-in-out infinite"></span>
+      Cybersecurity &amp; System Integration · UAE
+    </div>
+    <h1 data-reveal style="margin:26px 0 0;font-size:clamp(42px,5.6vw,80px);line-height:1.03;letter-spacing:-.038em;font-weight:600;color:#eff5ff;text-wrap:balance">Secure transformation.<br><span style="background:linear-gradient(100deg,#007ddc 0%,#00baeb 46%,#01f1f8 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#00baeb">Integrated with precision.</span></h1>
+    <p data-reveal style="margin:28px 0 0;max-width:700px;font-size:19px;line-height:1.6;color:rgba(239,245,255,.72);text-wrap:pretty">SechPoint SSIT brings cybersecurity, infrastructure and integration together — helping organisations reduce risk, strengthen resilience and move from strategy to secure operations.</p>
+    <div data-reveal style="margin-top:40px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+      <a href="#contact" style="background:linear-gradient(100deg,#007ddc,#00baeb);color:#00081c;padding:16px 28px;border-radius:999px;font-size:15.5px;font-weight:600;letter-spacing:-.01em;transition:transform .22s ease,box-shadow .22s ease;box-shadow:0 12px 30px -14px rgba(0,186,235,.7)" style-hover="transform:translateY(-2px);box-shadow:0 18px 38px -14px rgba(0,186,235,.9);color:#00081c">Speak to a Security Expert</a>
+      <a href="#deliver" style="border:1px solid rgba(239,245,255,.28);color:#eff5ff;padding:16px 28px;border-radius:999px;font-size:15.5px;font-weight:500;transition:border-color .22s ease,background .22s ease" style-hover="border-color:#00baeb;background:rgba(1,140,198,.14);color:#eff5ff">Explore Related Capabilities</a>
+    </div>
+  </div>
+</section>
+
+<section style="border-top:1px solid rgba(20,23,26,.09);border-bottom:1px solid rgba(20,23,26,.09);background:#fbfbf9">
+  <div style="max-width:900px;margin:0 auto;padding:88px 40px;text-align:center">
+    <p data-reveal style="margin:0;font-size:clamp(22px,2.3vw,30px);line-height:1.45;letter-spacing:-.02em;color:#22262b;text-wrap:pretty">Modern enterprises rarely struggle because they lack technology. They struggle because controls are fragmented, visibility is incomplete and platforms do not work together as one operating model. <span style="color:#0d6fb8">SechPoint SSIT helps close that gap</span> through advisory, architecture, implementation, managed services and lifecycle support.</p>
+  </div>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:96px 40px">
+  <div data-reveal style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#8a9099">01 — Our approach</div>
+  <div style="margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px">
+    <div data-reveal style="border:1px solid rgba(20,23,26,.1);border-radius:14px;padding:32px;background:#fbfbf9;transition:transform .3s ease,box-shadow .3s ease" style-hover="transform:translateY(-4px);box-shadow:0 24px 40px -30px rgba(20,23,26,.4)">
+      <div style="font:500 11px 'IBM Plex Mono',monospace;color:#0d6fb8">Pillar 1</div>
+      <h3 style="margin:16px 0 0;font-size:24px;line-height:1.2;letter-spacing:-.025em;font-weight:600">From fragmented tools to coordinated resilience</h3>
+      <p style="margin:14px 0 0;font-size:15.5px;line-height:1.6;color:#5c6470;text-wrap:pretty">We align people, process and technology around the assets and business services that matter most. Our approach connects security controls, infrastructure and operational workflows so customers can make informed decisions and respond with greater confidence.</p>
+    </div>
+    <div data-reveal style="border:1px solid rgba(20,23,26,.1);border-radius:14px;padding:32px;background:#fbfbf9;transition:transform .3s ease,box-shadow .3s ease" style-hover="transform:translateY(-4px);box-shadow:0 24px 40px -30px rgba(20,23,26,.4)">
+      <div style="font:500 11px 'IBM Plex Mono',monospace;color:#0d6fb8">Pillar 2</div>
+      <h3 style="margin:16px 0 0;font-size:24px;line-height:1.2;letter-spacing:-.025em;font-weight:600">A practical framework for cyber defence</h3>
+      <p style="margin:14px 0 0;font-size:15.5px;line-height:1.6;color:#5c6470;text-wrap:pretty">We support the security lifecycle across Identify, Protect, Detect, Respond and Recover — from asset visibility and access control to analytics, incident readiness and recovery planning.</p>
+      <div style="margin-top:22px;display:flex;flex-direction:column;gap:0">
+        <sc-for list="{{ lifecycleChips }}" as="c" hint-placeholder-count="5">
+          <div style="display:flex;align-items:center;gap:12px;padding:9px 0;border-top:1px solid rgba(20,23,26,.08)">
+            <span style="width:7px;height:7px;border-radius:50%;background:{{ c.dot }};display:block;transition:background .5s ease"></span>
+            <span style="font:500 13.5px 'IBM Plex Mono',monospace;letter-spacing:-.01em;color:{{ c.color }};transition:color .5s ease">{{ c.name }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div data-reveal style="border:1px solid rgba(20,23,26,.1);border-radius:14px;padding:32px;background:#fbfbf9;transition:transform .3s ease,box-shadow .3s ease" style-hover="transform:translateY(-4px);box-shadow:0 24px 40px -30px rgba(20,23,26,.4)">
+      <div style="font:500 11px 'IBM Plex Mono',monospace;color:#0d6fb8">Pillar 3</div>
+      <h3 style="margin:16px 0 0;font-size:24px;line-height:1.2;letter-spacing:-.025em;font-weight:600">Built around your environment</h3>
+      <p style="margin:14px 0 0;font-size:15.5px;line-height:1.6;color:#5c6470;text-wrap:pretty">Our vendor-agnostic approach starts with business priorities, existing investments and risk. We then design an architecture and delivery roadmap suited to the organisation rather than forcing a predetermined technology stack.</p>
+    </div>
+  </div>
+</section>
+
+<section id="deliver" style="border-top:1px solid rgba(20,23,26,.09);background:#fbfbf9">
+  <div style="max-width:1280px;margin:0 auto;padding:96px 40px">
+    <div data-reveal style="display:flex;justify-content:space-between;align-items:end;gap:40px;flex-wrap:wrap">
+      <div>
+        <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#8a9099">02 — What we deliver</div>
+        <h2 style="margin:18px 0 0;font-size:clamp(32px,3.6vw,48px);line-height:1.05;letter-spacing:-.032em;font-weight:600;max-width:620px">Capability across security, infrastructure and integration</h2>
+      </div>
+    </div>
+    <div style="margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(20,23,26,.1);border:1px solid rgba(20,23,26,.1);border-radius:14px;overflow:hidden">
+      <sc-for list="{{ capabilities }}" as="c" hint-placeholder-count="6">
+        <a href="#" style="background:#f4f4f1;padding:34px 30px 30px;display:flex;flex-direction:column;gap:16px;min-height:230px;transition:background .28s ease" style-hover="background:#eceee9;color:#14171a">
+          <span style="display:flex;gap:4px;align-items:flex-end;height:22px">
+            <span style="width:6px;height:{{ c.b1 }};background:#0d6fb8;display:block;border-radius:2px"></span>
+            <span style="width:6px;height:{{ c.b2 }};background:rgba(0,186,235,.55);display:block;border-radius:2px"></span>
+            <span style="width:6px;height:{{ c.b3 }};background:rgba(20,23,26,.18);display:block;border-radius:2px"></span>
+          </span>
+          <span style="font-size:20px;line-height:1.25;letter-spacing:-.022em;font-weight:600;flex:1">{{ c.name }}</span>
+          <span style="font:500 12px 'IBM Plex Mono',monospace;color:#0d6fb8;letter-spacing:.04em">EXPLORE →</span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:96px 40px">
+  <div data-reveal style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#8a9099">03 — Business outcomes</div>
+  <div style="margin-top:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(20,23,26,.1)">
+    <sc-for list="{{ outcomes }}" as="o" hint-placeholder-count="5">
+      <div data-reveal style="background:#f4f4f1;padding:30px 24px 26px">
+        <div style="font:500 12px 'IBM Plex Mono',monospace;color:#0d6fb8">{{ o.n }}</div>
+        <p style="margin:16px 0 0;font-size:16.5px;line-height:1.45;letter-spacing:-.015em;color:#22262b;text-wrap:pretty">{{ o.text }}</p>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section style="border-top:1px solid rgba(20,23,26,.09);border-bottom:1px solid rgba(20,23,26,.09);background:#fbfbf9">
+  <div style="max-width:1280px;margin:0 auto;padding:72px 40px">
+    <div data-reveal style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
+      <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#8a9099">04 — Proof</div>
+      <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.06em;color:#a05a2c;border:1px dashed rgba(160,90,44,.5);border-radius:5px;padding:3px 8px">PLACEHOLDERS · NOT FOR PUBLICATION</div>
+    </div>
+    <div style="margin-top:32px;display:grid;grid-template-columns:repeat(5,1fr);gap:20px">
+      <sc-for list="{{ proof }}" as="p" hint-placeholder-count="5">
+        <div data-reveal style="border:1px dashed rgba(20,23,26,.22);border-radius:12px;padding:24px 20px;background:repeating-linear-gradient(135deg,rgba(20,23,26,.03) 0 6px,transparent 6px 12px)">
+          <div style="font:500 15px 'IBM Plex Mono',monospace;color:#22262b;letter-spacing:-.01em">{{ p.token }}</div>
+          <div style="margin-top:10px;font-size:14px;line-height:1.4;color:#5c6470">{{ p.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+    <p data-reveal style="margin:24px 0 0;font-size:13.5px;color:#8a9099">Partner logos may appear here only with current authorisation and geographic validation.</p>
+  </div>
+</section>
+
+<section style="max-width:1080px;margin:0 auto;padding:96px 40px">
+  <div data-reveal style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#8a9099">05 — Frequently asked questions</div>
+  <div style="margin-top:30px;border-top:1px solid rgba(20,23,26,.14)">
+    <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="3">
+      <div style="border-bottom:1px solid rgba(20,23,26,.14)">
+        <button type="button" onClick="{{ f.toggle }}" style="width:100%;text-align:left;border:0;background:none;padding:26px 0;display:flex;gap:24px;align-items:flex-start;cursor:pointer;font-family:'Funnel Display',sans-serif">
+          <span style="flex:1;font-size:21px;line-height:1.3;letter-spacing:-.02em;font-weight:500;color:{{ f.color }};transition:color .25s ease">{{ f.q }}</span>
+          <span style="flex:none;width:26px;height:26px;border-radius:50%;border:1px solid rgba(20,23,26,.2);display:flex;align-items:center;justify-content:center;font-size:16px;color:#5c6470;transform:rotate({{ f.rot }});transition:transform .3s cubic-bezier(.2,.7,.2,1)">+</span>
+        </button>
+        <div style="overflow:hidden;max-height:{{ f.max }};opacity:{{ f.op }};transition:max-height .4s cubic-bezier(.2,.7,.2,1),opacity .3s ease">
+          <p style="margin:0 0 28px;max-width:720px;font-size:17px;line-height:1.6;color:#5c6470;text-wrap:pretty">{{ f.a }}</p>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="contact" style="background:#00081c;color:#f4f4f1">
+  <div style="max-width:1280px;margin:0 auto;padding:104px 40px 88px;text-align:center">
+    <h2 data-reveal style="margin:0;font-size:clamp(36px,4.4vw,62px);line-height:1.04;letter-spacing:-.035em;font-weight:600">Speak to a Security Expert</h2>
+    <p data-reveal style="margin:22px auto 0;max-width:620px;font-size:18.5px;line-height:1.55;color:rgba(244,244,241,.66)">Speak with SechPoint SSIT to discuss your environment, priorities and next steps.</p>
+    <div data-reveal style="margin-top:36px;display:flex;justify-content:center">
+      <a href="#contact" style="background:#0d6fb8;color:#fff;padding:16px 30px;border-radius:999px;font-size:15.5px;font-weight:500;transition:transform .22s ease,background .22s ease" style-hover="background:#1287d6;color:#fff;transform:translateY(-2px)">Speak to a Security Expert</a>
+    </div>
+    <div data-reveal style="margin-top:56px;padding-top:26px;border-top:1px solid rgba(244,244,241,.14);display:flex;justify-content:center;gap:30px;flex-wrap:wrap">
+      <sc-for list="{{ closingLinks }}" as="l" hint-placeholder-count="5">
+        <a href="#" style="font-size:14.5px;color:rgba(244,244,241,.7);transition:color .2s ease" style-hover="color:#fff">{{ l }}</a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#00081c;color:#f4f4f1;border-top:1px solid rgba(244,244,241,.12)">
+  <div style="max-width:1280px;margin:0 auto;padding:72px 40px 40px;display:grid;grid-template-columns:1.3fr 2.7fr;gap:64px">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="assets/sechpoint-logo.svg" alt="SechPoint" width="147" height="36" style="height:36px;width:auto;display:block">
+        <span style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#00baeb;padding:4px 7px;border:1px solid rgba(0,186,235,.4);border-radius:5px">SSIT</span>
+      </div>
+      <p style="margin:18px 0 0;font-size:14px;line-height:1.6;color:rgba(244,244,241,.6);max-width:340px;text-wrap:pretty">SechPoint SSIT helps organisations assess cyber risk, design resilient architectures, integrate security and infrastructure technologies, and improve operational readiness. Part of the SechPoint group.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:28px">
+      <sc-for list="{{ navGroups }}" as="g" hint-placeholder-count="5">
+        <div style="display:flex;flex-direction:column;gap:11px">
+          <div style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,244,241,.45)">{{ g.label }}</div>
+          <sc-for list="{{ g.items }}" as="item" hint-placeholder-count="6">
+            <a href="#" style="font-size:13.5px;color:rgba(244,244,241,.72);transition:color .2s ease" style-hover="color:#fff">{{ item }}</a>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  <div style="max-width:1280px;margin:0 auto;padding:0 40px 48px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;color:rgba(244,244,241,.5)">
+    <div style="display:flex;gap:22px;flex-wrap:wrap">
+      <a href="#" style="color:rgba(244,244,241,.5)" style-hover="color:#fff">Privacy Policy</a>
+      <a href="#" style="color:rgba(244,244,241,.5)" style-hover="color:#fff">Cookie Policy</a>
+      <a href="#" style="color:rgba(244,244,241,.5)" style-hover="color:#fff">Support</a>
+    </div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px">[Legal entity name — pending SechPoint confirmation]</div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#0d6fb8&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#0d6fb8&quot;,&quot;#1f5f8b&quot;,&quot;#2f4858&quot;,&quot;#8a5a2b&quot;]},&quot;lifecycleAutoplay&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showProof&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { menu: null, step: 0, faq: 0 };
+
+  componentDidMount() {
+    // Reveal-on-scroll as pure enhancement: content is visible by default,
+    // hidden only once JS confirms it can reveal it again.
+    const prep = () => {
+      let n = 0;
+      document.querySelectorAll('[data-reveal]').forEach(el => {
+        if (el.dataset.revealed) return;
+        const r = el.getBoundingClientRect();
+        if (r.top > window.innerHeight * 0.92) {
+          el.style.transitionDelay = (Math.min(n++, 4) * 60) + 'ms';
+          el.classList.add('pre');
+        } else {
+          el.dataset.revealed = '1';
+          el.classList.remove('pre');
+        }
+      });
+    };
+    const tick = () => {
+      document.querySelectorAll('[data-reveal].pre').forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight * 0.9) {
+          el.dataset.revealed = '1';
+          el.classList.remove('pre');
+        }
+      });
+    };
+    prep();
+    this._scroll = () => requestAnimationFrame(tick);
+    window.addEventListener('scroll', this._scroll, { passive: true });
+    window.addEventListener('resize', this._scroll, { passive: true });
+    this._t = setInterval(() => { prep(); tick(); }, 500);
+    setTimeout(() => { clearInterval(this._t); this._t = setInterval(tick, 400); }, 5000);
+    if (this.props.lifecycleAutoplay !== false) {
+      this._i = setInterval(() => this.setState(s => ({ step: (s.step + 1) % 5 })), 2400);
+    }
+  }
+  componentWillUnmount() {
+    clearInterval(this._i); clearInterval(this._t);
+    window.removeEventListener('scroll', this._scroll);
+    window.removeEventListener('resize', this._scroll);
+  }
+
+  renderVals() {
+    const accent = this.props.accent ?? '#0d6fb8';
+    const groups = [
+      { label: 'Cybersecurity', blurb: 'Controls across users, devices, data and networks.', items: ['Endpoint & Device', 'Email & Communication', 'Network & Infrastructure', 'Data & Identity', 'Threat Intelligence', 'Security Analytics', 'AI Security'] },
+      { label: 'Services', blurb: 'From advisory and assessment through to managed operations.', items: ['Cyber Advisory', 'Security Assessments', 'Architecture', 'Implementation & Integration', 'Managed Security', 'Incident Readiness', 'Compliance Enablement', 'Support'] },
+      { label: 'Digital Infrastructure', blurb: 'Resilient platforms for workloads and recovery.', items: ['HCI & Private Cloud', 'Virtualisation', 'Data Centre', 'Backup & Disaster Recovery'] },
+      { label: 'Industry Solutions', blurb: 'Sector programmes and regulatory requirements.', items: ['UAE e-Invoicing', 'Government', 'Financial Services', 'Healthcare', 'Energy', 'Enterprise'] },
+      { label: 'Company', blurb: 'How we work, who we work with, and how to reach us.', items: ['About', 'Delivery Model', 'Partners', 'Insights', 'Events', 'Contact'] }
+    ];
+    const open = this.state.menu;
+    const g = open == null ? null : groups[open];
+
+    const steps = [
+      { name: 'Identify', note: 'Asset visibility' },
+      { name: 'Protect', note: 'Access control' },
+      { name: 'Detect', note: 'Analytics' },
+      { name: 'Respond', note: 'Incident readiness' },
+      { name: 'Recover', note: 'Recovery planning' }
+    ];
+    const caps = [
+      'Cyber advisory and security assessments',
+      'Security architecture, implementation and integration',
+      'Endpoint, email, network, data and identity security',
+      'Threat intelligence, analytics and managed security',
+      'HCI, private cloud, virtualisation and disaster recovery',
+      'AI security governance and protection'
+    ];
+    const outs = [
+      'Clearer understanding of exposure and priorities',
+      'Integrated controls across users, data, applications and infrastructure',
+      'Faster, more consistent security operations',
+      'Scalable architecture aligned to business growth',
+      'A defined path from assessment through continuous improvement'
+    ];
+    const faqData = [
+      ['Does SechPoint SSIT work with existing security investments?', 'Yes. Engagements can begin with the current environment, identify gaps and integrate or optimise existing platforms before recommending additional controls.'],
+      ['Can SSIT support both cybersecurity and infrastructure projects?', 'Yes. The SSIT proposition connects security architecture with infrastructure, cloud, virtualisation and operational requirements.'],
+      ['How does an engagement begin?', 'Most engagements begin with a discovery session to understand scope, business priorities, current architecture, risk and desired outcomes.']
+    ];
+    const bars = [['22px', '14px', '9px'], ['9px', '22px', '14px'], ['14px', '9px', '22px'], ['22px', '9px', '14px'], ['9px', '14px', '22px'], ['14px', '22px', '9px']];
+
+    return {
+      navGroups: groups.map((x, i) => ({
+        label: x.label, items: x.items, active: open === i ? 1 : 0,
+        open: () => this.setState({ menu: i })
+      })),
+      closeMenu: () => this.setState({ menu: null }),
+      menuOpen: open != null,
+      menuLabel: g ? g.label : '',
+      menuBlurb: g ? g.blurb : '',
+      menuItems: g ? g.items : [],
+      lifecycle: steps.map((s, i) => ({
+        n: '0' + (i + 1), name: s.name, note: s.note,
+        bg: i === this.state.step ? 'rgba(13,111,184,.08)' : 'transparent',
+        border: i === this.state.step ? accent : 'rgba(20,23,26,.09)'
+      })),
+      lifecycleChips: steps.map((s, i) => ({
+        name: s.name.toUpperCase(),
+        dot: i === this.state.step ? accent : 'rgba(20,23,26,.18)',
+        color: i === this.state.step ? accent : '#8a9099'
+      })),
+      capabilities: caps.map((name, i) => ({ name, b1: bars[i][0], b2: bars[i][1], b3: bars[i][2] })),
+      outcomes: outs.map((text, i) => ({ n: '0' + (i + 1), text })),
+      proof: (this.props.showProof === false ? [] : [
+        { token: '[Verified number]', label: 'certified specialists' },
+        { token: '[Verified number]', label: 'completed projects' },
+        { token: '[Verified number]', label: 'countries supported' },
+        { token: '[Approved]', label: 'certifications and partner tiers' },
+        { token: '[Approved]', label: 'customer satisfaction or service metric' }
+      ]),
+      faqs: faqData.map(([q, a], i) => {
+        const on = this.state.faq === i;
+        return {
+          q, a, rot: on ? '45deg' : '0deg', max: on ? '260px' : '0px', op: on ? 1 : 0,
+          color: on ? accent : '#14171a',
+          toggle: () => this.setState(s => ({ faq: s.faq === i ? -1 : i }))
+        };
+      }),
+      closingLinks: ['Cybersecurity', 'Services', 'Digital Infrastructure', 'Industry Solutions', 'Contact']
+    };
+  }
+}
+</script>
+</body>
+</html>

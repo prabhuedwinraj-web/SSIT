@@ -1,0 +1,43 @@
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #050506;
+  color: #f2f5fa;
+  font-family: "Funnel Display", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: #f2f5fa; text-decoration: none; }
+
+/* Scroll reveal */
+[data-reveal] {
+  transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);
+}
+[data-reveal].pre { opacity: 0; transform: translateY(18px); }
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal].pre { opacity: 1; transform: none; transition: none; }
+}
+
+@keyframes ssitPulse { 0%,100% { opacity: .25; } 50% { opacity: 1; } }
+@keyframes ssitDrift { from { transform: translate3d(0,0,0); } to { transform: translate3d(-104px,-104px,0); } }
+
+/* ---- Hover states (ported from DC style-hover) ---- */
+a.hv-cta { transition: background .2s ease, color .2s ease; }
+a.hv-cta:hover { background: #00baeb !important; color: #050506 !important; }
+
+a.hv-heroPrimary:hover { background: #00baeb !important; color: #050506 !important; transform: translateY(-2px); }
+a.hv-heroSecondary:hover { border-color: rgba(0,186,235,.5) !important; background: #1b1d21 !important; }
+
+a.hv-link:hover { color: #00baeb !important; }
+a.hv-insights:hover { color: #f2f5fa !important; }
+
+nav button.hv-navbtn:hover { color: #f2f5fa; }
+
+a.hv-menuItem:hover { background: rgba(255,255,255,.05) !important; color: #00baeb !important; }
+a.hv-viewCap:hover { color: #01f1f8 !important; }
+a.hv-deliveryModel:hover { background: rgba(255,255,255,.06) !important; }
+
+a.hv-capCard:hover { background: #12141a !important; border-color: rgba(0,186,235,.45) !important; }
+
+.hv-outcomeRow { transition: background .3s ease; }
+.hv-outcomeRow:hover { background: rgba(0,125,220,.06); }
