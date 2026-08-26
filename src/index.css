@@ -21,6 +21,19 @@ a { color: #f2f5fa; text-decoration: none; }
 @keyframes ssitPulse { 0%,100% { opacity: .25; } 50% { opacity: 1; } }
 @keyframes ssitDrift { from { transform: translate3d(0,0,0); } to { transform: translate3d(-104px,-104px,0); } }
 
+/* Proof section — partner logo marquee */
+@keyframes ssitMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.ssit-marquee { overflow: hidden; position: relative;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
+.ssit-marquee-track { display: flex; width: max-content; animation: ssitMarquee 36s linear infinite; }
+.ssit-marquee:hover .ssit-marquee-track { animation-play-state: paused; }
+.ssit-logo { transition: color .3s ease, opacity .3s ease; opacity: .55; }
+.ssit-logo:hover { opacity: 1; color: #00baeb !important; }
+@media (prefers-reduced-motion: reduce) {
+  .ssit-marquee-track { animation: none; flex-wrap: wrap; justify-content: center; }
+}
+
 /* ---- Hover states (ported from DC style-hover) ---- */
 a.hv-cta { transition: background .2s ease, color .2s ease; }
 a.hv-cta:hover { background: #00baeb !important; color: #050506 !important; }

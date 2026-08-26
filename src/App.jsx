@@ -69,6 +69,71 @@ const SCATTER = [[4, 6, '-12deg'], [52, 22, '8deg'], [98, 2, '18deg'], [18, 46, 
 
 const CLOSING_LINKS = ['Cybersecurity', 'Services', 'Digital Infrastructure', 'Industry Solutions', 'Contact']
 
+/* ---- Proof section data (all illustrative / placeholder) ---- */
+const PROOF_STATS = [
+  { k: 'S–01', to: 40, suffix: '+', label: 'certified specialists' },
+  { k: 'S–02', to: 250, suffix: '+', label: 'completed projects' },
+  { k: 'S–03', to: 12, suffix: '', label: 'countries supported' },
+]
+
+const CERTS = ['ISO/IEC 27001', 'SOC 2 Type II', 'CREST', 'PCI DSS', 'Microsoft Solutions Partner', 'Fortinet Advanced', 'Palo Alto NextWave', 'Cisco Premier']
+
+const PARTNERS = [
+  { name: 'Aegis', mark: 'shield' },
+  { name: 'Nimbus', mark: 'cloud' },
+  { name: 'Vaultline', mark: 'vault' },
+  { name: 'Corewave', mark: 'wave' },
+  { name: 'Sentinel', mark: 'eye' },
+  { name: 'Halcyon', mark: 'orbit' },
+  { name: 'Meridian', mark: 'diamond' },
+  { name: 'Ironclad', mark: 'hex' },
+]
+
+function PartnerMark({ type }) {
+  const common = { width: 26, height: 26, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.5, strokeLinejoin: 'round', strokeLinecap: 'round' }
+  switch (type) {
+    case 'shield': return (<svg {...common}><path d="M12 2.5l7 3v6c0 4.4-3 7.4-7 8.9-4-1.5-7-4.5-7-8.9v-6l7-3z" /><path d="M9 12l2 2 4-4" /></svg>)
+    case 'cloud': return (<svg {...common}><path d="M7 17.5h9.2a3.6 3.6 0 000-7.2 5.2 5.2 0 00-10-1.3A3.4 3.4 0 007 17.5z" /></svg>)
+    case 'vault': return (<svg {...common}><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="3.2" /><path d="M12 3v2M12 19v2M3 12h2M19 12h2" /></svg>)
+    case 'wave': return (<svg {...common}><path d="M2.5 9c3-3 6.5 3 9.5 0s6.5-3 9.5 0" /><path d="M2.5 15c3-3 6.5 3 9.5 0s6.5-3 9.5 0" /></svg>)
+    case 'eye': return (<svg {...common}><path d="M2 12s3.6-6.2 10-6.2S22 12 22 12s-3.6 6.2-10 6.2S2 12 2 12z" /><circle cx="12" cy="12" r="2.6" /></svg>)
+    case 'orbit': return (<svg {...common}><circle cx="12" cy="12" r="3.4" /><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(-28 12 12)" /></svg>)
+    case 'diamond': return (<svg {...common}><path d="M12 2.5l9.5 9.5L12 21.5 2.5 12z" /><path d="M7 12l5-5 5 5-5 5z" /></svg>)
+    case 'hex': return (<svg {...common}><path d="M12 2.5l8.3 4.8v9.4L12 21.5l-8.3-4.8V7.3z" /></svg>)
+    default: return null
+  }
+}
+
+/* Count-up that runs once when scrolled into view. */
+function CountUp({ to, suffix = '', duration = 1500 }) {
+  const [n, setN] = useState(0)
+  const ref = useRef(null)
+  const started = useRef(false)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    if (window.matchMedia('(prefers-reduced-motion:reduce)').matches) { setN(to); return }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting && !started.current) {
+          started.current = true
+          const t0 = performance.now()
+          const step = (t) => {
+            const p = Math.min(1, (t - t0) / duration)
+            const eased = 1 - Math.pow(1 - p, 3)
+            setN(Math.round(to * eased))
+            if (p < 1) requestAnimationFrame(step)
+          }
+          requestAnimationFrame(step)
+        }
+      })
+    }, { threshold: 0.5 })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [to, duration])
+  return <span ref={ref}>{n}{suffix}</span>
+}
+
 export default function App({ accent = '#00baeb', lifecycleAutoplay = true, showProof = true }) {
   const [menu, setMenu] = useState(null)
   const [step, setStep] = useState(0)
@@ -441,27 +506,87 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
       </section>
 
       {/* ============ 04 — PROOF ============ */}
-      <section style={st("border-top:1px solid rgba(255,255,255,.07)")}>
-        <div style={st("max-width:1440px;margin:0 auto;padding:86px clamp(20px,2.6vw,40px)")}>
+      <section id="proof" style={st("border-top:1px solid rgba(255,255,255,.07);position:relative;overflow:hidden")}>
+        <div style={st("position:absolute;inset:0;background:radial-gradient(60% 55% at 50% 0%,rgba(0,125,220,.12) 0%,rgba(5,5,6,0) 70%);pointer-events:none")}></div>
+        <div style={st("position:relative;max-width:1440px;margin:0 auto;padding:96px clamp(20px,2.6vw,40px)")}>
           <div data-reveal style={st("display:flex;align-items:baseline;gap:14px;flex-wrap:wrap")}>
             <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,245,250,.42)")}>04 — Proof</div>
             <div style={st("font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#d59a4e;border:1px dashed rgba(213,154,78,.45);border-radius:6px;padding:4px 9px")}>PLACEHOLDERS · NOT FOR PUBLICATION</div>
           </div>
-          <div style={st("margin-top:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px")}>
-            {(showProof === false ? [] : [
-              { token: '[Verified number]', label: 'certified specialists' },
-              { token: '[Verified number]', label: 'completed projects' },
-              { token: '[Verified number]', label: 'countries supported' },
-              { token: '[Approved]', label: 'certifications and partner tiers' },
-              { token: '[Approved]', label: 'customer satisfaction or service metric' },
-            ]).map((p, i) => (
-              <div key={i} data-reveal style={st("border:1px dashed rgba(255,255,255,.18);border-radius:14px;padding:26px 22px;background:repeating-linear-gradient(135deg,rgba(255,255,255,.028) 0 6px,transparent 6px 12px)")}>
-                <div style={st("font:500 15px 'IBM Plex Mono',monospace;color:rgba(242,245,250,.9);letter-spacing:-.01em")}>{p.token}</div>
-                <div style={st("margin-top:12px;font-size:14.5px;line-height:1.4;color:rgba(242,245,250,.5)")}>{p.label}</div>
+
+          {showProof !== false && (
+            <>
+              {/* Animated stat counters */}
+              <div style={st("margin-top:38px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px")}>
+                {PROOF_STATS.map((s, i) => (
+                  <div key={i} data-reveal style={st("position:relative;overflow:hidden;background:linear-gradient(180deg,#0d0f13,#0a0b0e);border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:28px 28px 24px;display:flex;flex-direction:column;gap:16px;min-height:206px")}>
+                    <div style={st("position:absolute;inset:0;background:radial-gradient(80% 80% at 100% 0%,rgba(0,186,235,.12) 0%,rgba(11,12,15,0) 62%);pointer-events:none")}></div>
+                    <div style={st("position:relative;display:flex;align-items:center;justify-content:space-between")}>
+                      <span style={st("font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.14em;color:rgba(242,245,250,.4)")}>{s.k}</span>
+                      <span style={st("font:500 9.5px 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#d59a4e;border:1px solid rgba(213,154,78,.4);border-radius:5px;padding:3px 7px")}>UNVERIFIED</span>
+                    </div>
+                    <div style={st("position:relative;font:600 clamp(52px,5.4vw,74px)/1 'Funnel Display',sans-serif;letter-spacing:-.04em;background:linear-gradient(125deg,#f2f5fa 0%,#00baeb 120%);-webkit-background-clip:text;background-clip:text;color:transparent")}>
+                      <CountUp to={s.to} suffix={s.suffix} />
+                    </div>
+                    <div style={st("position:relative;display:flex;flex-direction:column;gap:14px;margin-top:auto")}>
+                      <span style={st("height:2px;border-radius:2px;background:linear-gradient(90deg,#007ddc,#01f1f8)")}></span>
+                      <span style={st("font-size:15.5px;letter-spacing:-.01em;color:rgba(242,245,250,.72)")}>{s.label}</span>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-          <p data-reveal style={st("margin:26px 0 0;font-size:13.5px;color:rgba(242,245,250,.38)")}>Partner logos may appear here only with current authorisation and geographic validation.</p>
+
+              {/* Credentials + satisfaction */}
+              <div style={st("margin-top:18px;display:grid;grid-template-columns:minmax(0,1.75fr) minmax(240px,1fr);gap:18px;align-items:stretch")}>
+                <div data-reveal style={st("background:#0b0c0f;border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:28px 28px 26px;display:flex;flex-direction:column;gap:18px")}>
+                  <div style={st("display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px")}>
+                    <span style={st("font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#00baeb")}>Certifications &amp; partner tiers</span>
+                    <span style={st("font:500 9.5px 'IBM Plex Mono',monospace;letter-spacing:.16em;color:rgba(242,245,250,.4)")}>SAMPLE SET</span>
+                  </div>
+                  <div style={st("display:flex;flex-wrap:wrap;gap:10px")}>
+                    {CERTS.map((c) => (
+                      <span key={c} style={st("display:inline-flex;align-items:center;gap:9px;font-size:13.5px;letter-spacing:-.005em;color:rgba(242,245,250,.82);padding:10px 14px;border:1px solid rgba(255,255,255,.1);border-radius:999px;background:rgba(255,255,255,.02)")}>
+                        <span style={st("width:6px;height:6px;border-radius:50%;background:#00baeb;display:block")}></span>
+                        {c}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div data-reveal style={st("position:relative;overflow:hidden;border:1px solid rgba(0,186,235,.28);border-radius:18px;padding:28px 26px;background:linear-gradient(155deg,rgba(0,125,220,.16) 0%,rgba(11,12,15,.2) 60%);display:flex;flex-direction:column;justify-content:space-between;gap:18px")}>
+                  <div style={st("display:flex;align-items:center;justify-content:space-between")}>
+                    <span style={st("font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:rgba(242,245,250,.7)")}>Avg. CSAT</span>
+                    <span style={st("font:500 9.5px 'IBM Plex Mono',monospace;letter-spacing:.16em;color:#d59a4e")}>UNVERIFIED</span>
+                  </div>
+                  <div style={st("font:600 clamp(44px,4.6vw,62px)/1 'Funnel Display',sans-serif;letter-spacing:-.04em;color:#f2f5fa")}><CountUp to={98} suffix="%" /></div>
+                  <div style={st("position:relative;height:8px;border-radius:4px;background:rgba(255,255,255,.1);overflow:hidden")}>
+                    <span style={st("position:absolute;left:0;top:0;bottom:0;width:98%;border-radius:4px;background:linear-gradient(90deg,#007ddc,#01f1f8);display:block")}></span>
+                  </div>
+                  <span style={st("font-size:13.5px;line-height:1.4;color:rgba(242,245,250,.6)")}>Customer satisfaction across engagements (sample).</span>
+                </div>
+              </div>
+
+              {/* Partner / alliance marquee (dummy) */}
+              <div data-reveal style={st("margin-top:40px")}>
+                <div style={st("display:flex;align-items:center;gap:12px;flex-wrap:wrap")}>
+                  <span style={st("font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:rgba(242,245,250,.42)")}>Sample partner &amp; alliance marks</span>
+                  <span style={st("font-size:12px;color:rgba(242,245,250,.34)")}>— illustrative only, not affiliated</span>
+                </div>
+                <div className="ssit-marquee" style={st("margin-top:22px;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);padding:26px 0")}>
+                  <div className="ssit-marquee-track">
+                    {[...PARTNERS, ...PARTNERS].map((p, i) => (
+                      <div key={i} className="ssit-logo" style={st("display:flex;align-items:center;gap:12px;padding:0 clamp(24px,3vw,44px);color:rgba(242,245,250,.6);white-space:nowrap")}>
+                        <PartnerMark type={p.mark} />
+                        <span style={st("font-size:19px;font-weight:600;letter-spacing:-.025em")}>{p.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+
+          <p data-reveal style={st("margin:26px 0 0;font-size:13.5px;color:rgba(242,245,250,.38)")}>All figures and marks above are placeholders. Real metrics and partner logos may appear only with an owner, source, measurement period, current authorisation and geographic validation.</p>
         </div>
       </section>
 
