@@ -242,7 +242,7 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
           )}
 
           {!wide && (
-            <div style={st("flex:1;display:flex;justify-content:flex-start")}>
+            <div style={st("flex:1;display:flex;justify-content:flex-end")}>
               <button
                 type="button"
                 onClick={() => setCompactOpen((v) => !v)}
