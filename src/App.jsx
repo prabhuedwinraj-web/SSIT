@@ -660,6 +660,10 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
       {/* ============ 05 — FAQ ============ */}
       <section id="faq" style={st("border-top:1px solid rgba(255,255,255,.07)")}>
         <div style={st("max-width:1080px;margin:0 auto;padding:110px 40px")}>
+          <div data-reveal style={st("max-width:640px;margin:0 0 44px")}>
+            <h2 style={st("margin:0;font-size:clamp(34px,4.2vw,56px);line-height:1.02;letter-spacing:-.04em;font-weight:600;color:#f2f5fa;text-wrap:balance")}>Frequently asked questions</h2>
+            <p style={st("margin:20px 0 0;font-size:18.5px;line-height:1.55;color:rgba(242,245,250,.6);text-wrap:pretty")}>The essentials on how engagements work with SechPoint SSIT.</p>
+          </div>
           <div style={st("border-top:1px solid rgba(255,255,255,.1)")}>
             {FAQ_DATA.map(([q, a], i) => {
               const on = faq === i
