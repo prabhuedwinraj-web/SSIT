@@ -1,0 +1,6 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "npm install --prefix ssit-react",
+  "buildCommand": "npm run build --prefix ssit-react",
+  "outputDirectory": "ssit-react/dist"
+}
