@@ -478,6 +478,24 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
         </div>
       </section>
 
+      {/* ============ DELIVERY VISUAL ============ */}
+      <section id="delivervisual" style={st("border-top:1px solid rgba(255,255,255,.07)")}>
+        <div style={st("max-width:1440px;margin:0 auto;padding:96px clamp(20px,2.6vw,40px)")}>
+          <div data-reveal style={st("position:relative;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.09)")}>
+            <img src="assets/deliver-visual.jpg" alt="A security engineer reviewing code late at night, with source files projected around the workspace" loading="lazy" style={st("width:100%;height:clamp(320px,44vw,560px);object-fit:cover;object-position:center 30%;display:block")} />
+            <div style={st("position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,6,.15) 0%,rgba(5,5,6,.1) 40%,rgba(5,5,6,.82) 100%);pointer-events:none")}></div>
+            <div style={st("position:absolute;inset:0;background:radial-gradient(70% 90% at 12% 100%,rgba(0,125,220,.28) 0%,rgba(5,5,6,0) 62%);pointer-events:none")}></div>
+            <div style={st("position:absolute;left:0;right:0;bottom:0;padding:clamp(26px,4vw,54px);display:flex;flex-direction:column;gap:14px")}>
+              <div style={st("display:flex;align-items:center;gap:10px;font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#00baeb")}>
+                <span style={st("width:6px;height:6px;border-radius:50%;background:#00baeb;display:block")}></span>
+                Engineering &amp; delivery
+              </div>
+              <div style={st("font-size:clamp(26px,3.2vw,44px);line-height:1.06;letter-spacing:-.035em;font-weight:600;color:#f2f5fa;max-width:720px;text-wrap:balance")}>Security engineered into every layer of delivery</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ============ 03 — BUSINESS OUTCOMES ============ */}
       <section style={st("border-top:1px solid rgba(255,255,255,.07)")}>
         <div style={st("max-width:1440px;margin:0 auto;padding:110px clamp(20px,2.6vw,40px)")}>
