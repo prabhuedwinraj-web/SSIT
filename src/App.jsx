@@ -627,17 +627,41 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
       </section>
 
       {/* ============ CONTACT / CLOSING CTA ============ */}
-      <section id="contact" style={st("border-top:1px solid rgba(255,255,255,.07);position:relative;overflow:hidden")}>
-        <div style={st("position:absolute;inset:0;background:radial-gradient(80% 70% at 50% 100%,rgba(0,125,220,.28) 0%,rgba(5,5,6,0) 72%);pointer-events:none")}></div>
-        <div style={st("position:relative;max-width:1080px;margin:0 auto;padding:120px 40px 104px;text-align:center")}>
-          <h2 data-reveal style={st("margin:0;font-size:clamp(38px,5.4vw,76px);line-height:1;letter-spacing:-.045em;font-weight:600")}>Speak to a Security Expert</h2>
-          <p data-reveal style={st("margin:26px auto 0;max-width:640px;font-size:19.5px;line-height:1.55;color:rgba(242,245,250,.6)")}>Speak with SechPoint SSIT to discuss your environment, priorities and next steps.</p>
-          <div data-reveal style={st("margin-top:40px;display:flex;justify-content:center")}>
-            <a href="#contact" className="hv-heroPrimary" style={st("background:#f2f5fa;color:#050506;padding:17px 32px;border-radius:11px;font-size:16.5px;font-weight:600;transition:transform .22s ease,background .22s ease,color .22s ease")}>Speak to a Security Expert</a>
+      <section id="contact" style={st("position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,.07);background:#050506")}>
+        <wave-arcs
+          background-color="#050506"
+          line-color="rgba(0,140,210,0.85)"
+          line-width="1.4"
+          line-count="70"
+          speed="5"
+          glow="14"
+          interactive="true"
+          style={st("position:absolute;inset:0;width:100%;height:100%;z-index:0")}
+        ></wave-arcs>
+        <div style={st("position:absolute;inset:0;z-index:1;background:radial-gradient(72% 62% at 50% 42%,rgba(5,5,6,.5) 0%,rgba(5,5,6,.18) 52%,rgba(5,5,6,.9) 100%);pointer-events:none")}></div>
+
+        <div style={st("position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:clamp(92px,11vw,150px) clamp(20px,2.6vw,40px)")}>
+          <div data-reveal style={st("position:relative;overflow:hidden;max-width:860px;margin:0 auto;border-radius:26px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(180deg,rgba(18,20,26,.74) 0%,rgba(9,10,13,.8) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 50px 130px -50px rgba(0,0,0,.85);padding:clamp(42px,5.5vw,78px) clamp(26px,4vw,64px);text-align:center")}>
+            <span style={st("position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,186,235,.75),transparent)")}></span>
+            <span style={st("position:absolute;top:-40%;right:-10%;width:60%;height:120%;background:radial-gradient(50% 50% at 50% 50%,rgba(0,125,220,.16) 0%,rgba(5,5,6,0) 70%);pointer-events:none")}></span>
+
+            <div style={st("position:relative;display:flex;flex-direction:column;align-items:center")}>
+              <div style={st("display:inline-flex;align-items:center;gap:9px;padding:8px 15px;border-radius:999px;border:1px solid rgba(0,186,235,.32);background:rgba(0,186,235,.08);font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#00baeb")}>
+                <span style={st("width:6px;height:6px;border-radius:50%;background:#00baeb;display:block;animation:ssitPulse 2.4s ease-in-out infinite")}></span>
+                Start the conversation
+              </div>
+              <h2 style={st("margin:26px 0 0;font-size:clamp(34px,4.8vw,64px);line-height:1.02;letter-spacing:-.045em;font-weight:600;text-wrap:balance")}>Speak to a Security Expert</h2>
+              <p style={st("margin:22px auto 0;max-width:560px;font-size:18.5px;line-height:1.55;color:rgba(242,245,250,.62);text-wrap:pretty")}>Speak with SechPoint SSIT to discuss your environment, priorities and next steps.</p>
+              <div style={st("margin-top:38px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center")}>
+                <a href="#contact" className="hv-heroPrimary" style={st("background:#f2f5fa;color:#050506;padding:17px 32px;border-radius:11px;font-size:16.5px;font-weight:600;letter-spacing:-.01em;transition:transform .22s ease,background .22s ease,color .22s ease")}>Speak to a Security Expert</a>
+                <a href="#deliver" className="hv-heroSecondary" style={st("background:rgba(20,21,24,.6);border:1px solid rgba(255,255,255,.14);color:#f2f5fa;padding:17px 30px;border-radius:11px;font-size:16.5px;font-weight:500;letter-spacing:-.01em;transition:background .22s ease,border-color .22s ease")}>Explore Capabilities</a>
+              </div>
+            </div>
           </div>
-          <div data-reveal style={st("margin-top:60px;padding-top:28px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:center;gap:30px;flex-wrap:wrap")}>
+
+          <div data-reveal style={st("margin-top:clamp(40px,5vw,60px);display:flex;justify-content:center;gap:30px;flex-wrap:wrap")}>
             {CLOSING_LINKS.map((l) => (
-              <a key={l} href="#" className="hv-link" style={st("font-size:14.5px;color:rgba(242,245,250,.55)")}>{l}</a>
+              <a key={l} href="#" className="hv-link" style={st("font-size:14.5px;color:rgba(242,245,250,.6)")}>{l}</a>
             ))}
           </div>
         </div>
