@@ -1,4 +1,56 @@
 import React, { useEffect, useState, useRef } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faClipboardCheck, faDiagramProject, faShieldHalved, faMagnifyingGlassChart, faServer, faRobot,
+  faLaptop, faEnvelope, faNetworkWired, faFingerprint, faShieldVirus, faChartLine,
+  faComments, faSitemap, faGears, faUserShield, faTriangleExclamation, faFileContract, faHeadset,
+  faCloud, faLayerGroup, faDatabase,
+  faFileInvoiceDollar, faLandmark, faBuildingColumns, faHeartPulse, faBolt, faBuilding,
+  faCircleInfo, faHandshake, faLightbulb, faCalendarDays, faPhone,
+} from '@fortawesome/free-solid-svg-icons'
+
+// Icons for the capability cards (aligned with CAPS order)
+const CAP_ICONS = [faClipboardCheck, faDiagramProject, faShieldHalved, faMagnifyingGlassChart, faServer, faRobot]
+
+// Icons for nav-drawer items, keyed by label
+const NAV_ICONS = {
+  // Cybersecurity
+  'Endpoint & Device': faLaptop,
+  'Email & Communication': faEnvelope,
+  'Network & Infrastructure': faNetworkWired,
+  'Data & Identity': faFingerprint,
+  'Threat Intelligence': faShieldVirus,
+  'Security Analytics': faChartLine,
+  'AI Security': faRobot,
+  // Services
+  'Cyber Advisory': faComments,
+  'Security Assessments': faClipboardCheck,
+  'Architecture': faSitemap,
+  'Implementation & Integration': faGears,
+  'Managed Security': faUserShield,
+  'Incident Readiness': faTriangleExclamation,
+  'Compliance Enablement': faFileContract,
+  'Support': faHeadset,
+  // Digital Infrastructure
+  'HCI & Private Cloud': faCloud,
+  'Virtualisation': faLayerGroup,
+  'Data Centre': faServer,
+  'Backup & Disaster Recovery': faDatabase,
+  // Industry Solutions
+  'UAE e-Invoicing': faFileInvoiceDollar,
+  'Government': faLandmark,
+  'Financial Services': faBuildingColumns,
+  'Healthcare': faHeartPulse,
+  'Energy': faBolt,
+  'Enterprise': faBuilding,
+  // Company
+  'About': faCircleInfo,
+  'Delivery Model': faDiagramProject,
+  'Partners': faHandshake,
+  'Insights': faLightbulb,
+  'Events': faCalendarDays,
+  'Contact': faPhone,
+}
 
 /* Parse an inline CSS string into a React style object (camelCased keys).
    Lets us port the design's inline styles almost verbatim. */
@@ -274,7 +326,10 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
                   <div style={st("font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,245,250,.42)")}>{grp.label}</div>
                   <div style={st("margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:2px 18px")}>
                     {grp.items.map((item) => (
-                      <a key={item} href="#" className="hv-menuItem" style={st("padding:8px 10px;margin-left:-10px;border-radius:8px;font-size:15px;color:rgba(242,245,250,.82)")}>{item}</a>
+                      <a key={item} href="#" className="hv-menuItem" style={st("display:flex;align-items:center;gap:11px;padding:8px 10px;margin-left:-10px;border-radius:8px;font-size:15px;color:rgba(242,245,250,.82)")}>
+                        <FontAwesomeIcon icon={NAV_ICONS[item]} style={{ width: '15px', fontSize: '14px', color: '#00baeb', flex: 'none' }} />
+                        {item}
+                      </a>
                     ))}
                   </div>
                 </div>
@@ -292,7 +347,10 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
                   <div style={st("font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,245,250,.42)")}>{g.label}</div>
                   <div style={st("margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:6px 24px")}>
                     {g.items.map((item) => (
-                      <a key={item} href="#" className="hv-menuItem" style={st("padding:10px 12px;margin-left:-12px;border-radius:9px;font-size:15.5px;font-weight:500;letter-spacing:-.015em;color:rgba(242,245,250,.86);transition:background .18s ease,color .18s ease")}>{item}</a>
+                      <a key={item} href="#" className="hv-menuItem" style={st("display:flex;align-items:center;gap:12px;padding:10px 12px;margin-left:-12px;border-radius:9px;font-size:15.5px;font-weight:500;letter-spacing:-.015em;color:rgba(242,245,250,.86);transition:background .18s ease,color .18s ease")}>
+                        <FontAwesomeIcon icon={NAV_ICONS[item]} style={{ width: '16px', fontSize: '15px', color: '#00baeb', flex: 'none' }} />
+                        {item}
+                      </a>
                     ))}
                   </div>
                 </div>
@@ -463,10 +521,8 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
           <div className="deliver-grid" style={st("margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px")}>
             {CAPS.map((name, i) => (
               <a key={i} href="#" data-reveal className="hv-capCardLight" style={st("background:#ffffff;border:1px solid rgba(9,17,34,.1);border-radius:18px;padding:32px 30px 28px;display:flex;flex-direction:column;gap:18px;min-height:250px;box-shadow:0 12px 30px -22px rgba(9,17,34,.4);transition:background .28s ease,border-color .28s ease,box-shadow .28s ease")}>
-                <span style={st("display:flex;gap:5px;align-items:flex-end;height:26px")}>
-                  <span style={st(`width:7px;height:${BARS[i][0]};background:#007ddc;display:block;border-radius:2px`)}></span>
-                  <span style={st(`width:7px;height:${BARS[i][1]};background:#00baeb;display:block;border-radius:2px`)}></span>
-                  <span style={st(`width:7px;height:${BARS[i][2]};background:rgba(9,17,34,.18);display:block;border-radius:2px`)}></span>
+                <span style={st("display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:13px;background:linear-gradient(150deg,rgba(0,125,220,.14),rgba(0,186,235,.1));color:#007ddc")}>
+                  <FontAwesomeIcon icon={CAP_ICONS[i]} style={{ fontSize: '20px' }} />
                 </span>
                 <span style={st("font-size:22px;line-height:1.2;letter-spacing:-.028em;font-weight:600;flex:1;color:#0b0e14")}>{name}</span>
                 <span style={st("font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#0072cc")}>EXPLORE →</span>
