@@ -79,4 +79,6 @@ a.hv-capCardLight:hover { background: #f6faff !important; border-color: rgba(0,1
 @media (max-width: 560px) {
   .m-hide-xs { display: none !important; }
   .hero-pad { padding-left: 22px !important; padding-right: 22px !important; }
+  .hero-actions { flex-direction: column; width: 100%; }
+  .hero-actions a { width: 100%; text-align: center; }
 }

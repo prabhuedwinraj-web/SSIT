@@ -340,7 +340,7 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
           </div>
           <h1 data-reveal style={st("margin:34px 0 0;font-size:clamp(44px,6.6vw,96px);line-height:.98;letter-spacing:-.045em;font-weight:600;color:#f2f5fa;text-wrap:balance")}>Secure transformation.<br /><span style={{ color: '#007ddc' }}>Integrated</span> with precision.</h1>
           <p data-reveal style={st("margin:34px 0 0;max-width:720px;font-size:19.5px;line-height:1.6;color:rgba(242,245,250,.62);text-wrap:pretty")}>SechPoint SSIT brings cybersecurity, infrastructure and integration together — helping organisations reduce risk, strengthen resilience and move from strategy to secure operations.</p>
-          <div data-reveal style={st("margin-top:42px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center")}>
+          <div data-reveal className="hero-actions" style={st("margin-top:42px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center")}>
             <a href="#contact" className="hv-heroPrimary" style={st("background:#f2f5fa;color:#050506;padding:16px 28px;border-radius:11px;font-size:16px;font-weight:600;letter-spacing:-.01em;transition:transform .22s ease,background .22s ease,color .22s ease")}>Speak to a Security Expert</a>
             <a href="#deliver" className="hv-heroSecondary" style={st("background:#141518;border:1px solid rgba(255,255,255,.1);color:#f2f5fa;padding:16px 28px;border-radius:11px;font-size:16px;font-weight:500;letter-spacing:-.01em;transition:background .22s ease,border-color .22s ease")}>Explore Related Capabilities</a>
           </div>
