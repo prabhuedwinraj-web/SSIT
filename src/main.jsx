@@ -6,12 +6,14 @@ import './index.css'
 import { useRoute } from './router.jsx'
 import App from './App.jsx'
 import About from './pages/About.jsx'
+import DeliveryModel from './pages/DeliveryModel.jsx'
 import ComingSoon from './pages/ComingSoon.jsx'
 
 // Built pages by route. Everything else falls back to a graceful "in progress" page.
 const PAGES = {
   '/': App,
   '/about': About,
+  '/delivery-model': DeliveryModel,
 }
 
 function titleFromPath(p) {
