@@ -85,6 +85,11 @@ export const ROUTE_FOR = (() => {
     'Support': '/support',
     'Privacy': '/privacy',
     'Contact': '/contact',
+    // Related-link aliases used in body copy
+    'Endpoint Security': '/cybersecurity/endpoint-device-security',
+    'Data & Identity Security': '/cybersecurity/data-identity-security',
+    'Cloud & Infrastructure': '/digital-infrastructure',
+    'Security Awareness': '/cybersecurity/email-communication-security',
   })
   return m
 })()

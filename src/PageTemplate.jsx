@@ -6,7 +6,7 @@ import { routeForLabel } from './nav.js'
 
 const eyebrow = st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,245,250,.42)")
 
-export default function PageTemplate({ seo, breadcrumb, eyebrow: eb, h1, lede, primary, secondary, opening, pillarsLabel, pillars = [], deliver = [], outcomes = [], next, related = [] }) {
+export default function PageTemplate({ seo, breadcrumb, eyebrow: eb, h1, lede, primary, secondary, opening, pillarsLabel, pillars = [], deliver = [], outcomes = [], faqs = [], next, related = [] }) {
   useEffect(() => { if (seo) document.title = seo }, [seo])
 
   return (
@@ -90,6 +90,23 @@ export default function PageTemplate({ seo, breadcrumb, eyebrow: eb, h1, lede, p
                 </div>
               ))}
               <div style={st("border-top:1px solid rgba(255,255,255,.09)")}></div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* FAQ */}
+      {faqs.length > 0 && (
+        <section style={st("border-bottom:1px solid rgba(255,255,255,.07)")}>
+          <div style={st("max-width:1080px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,2.6vw,40px)")}>
+            <div style={eyebrow}>Frequently asked questions</div>
+            <div style={st("margin-top:30px;border-top:1px solid rgba(255,255,255,.1)")}>
+              {faqs.map(([q, a]) => (
+                <div key={q} style={st("border-bottom:1px solid rgba(255,255,255,.1);padding:26px 0")}>
+                  <h3 style={st("margin:0;font-size:20px;line-height:1.3;letter-spacing:-.02em;font-weight:600;color:#f2f5fa")}>{q}</h3>
+                  <p style={st("margin:12px 0 0;max-width:760px;font-size:16.5px;line-height:1.6;color:rgba(242,245,250,.6);text-wrap:pretty")}>{a}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
