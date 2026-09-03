@@ -3,6 +3,27 @@ import { createRoot } from 'react-dom/client'
 import './liquid-grid.js'
 import './wave-arcs.js'
 import './index.css'
+import { useRoute } from './router.jsx'
 import App from './App.jsx'
+import About from './pages/About.jsx'
+import ComingSoon from './pages/ComingSoon.jsx'
 
-createRoot(document.getElementById('root')).render(<App />)
+// Built pages by route. Everything else falls back to a graceful "in progress" page.
+const PAGES = {
+  '/': App,
+  '/about': About,
+}
+
+function titleFromPath(p) {
+  const seg = p.split('/').filter(Boolean).pop() || 'Page'
+  return seg.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
+}
+
+function Root() {
+  const path = useRoute()
+  const Page = PAGES[path]
+  if (Page) return <Page />
+  return <ComingSoon title={titleFromPath(path)} />
+}
+
+createRoot(document.getElementById('root')).render(<Root />)
