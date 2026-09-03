@@ -92,6 +92,11 @@ export const ROUTE_FOR = (() => {
     'Security Awareness': '/cybersecurity/email-communication-security',
     'Network Security': '/cybersecurity/network-infrastructure-security',
     'Services': '/services/cyber-advisory',
+    'Privacy Policy': '/privacy',
+    'Cookie Policy': '/privacy',
+    'Support Services': '/services/support-services',
+    'Insights': '/insights',
+    'Events': '/events',
   })
   return m
 })()

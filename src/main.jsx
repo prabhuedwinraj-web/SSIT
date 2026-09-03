@@ -32,6 +32,13 @@ import FinancialServices from './pages/FinancialServices.jsx'
 import Healthcare from './pages/Healthcare.jsx'
 import EnergyUtilities from './pages/EnergyUtilities.jsx'
 import Enterprise from './pages/Enterprise.jsx'
+import Partners from './pages/Partners.jsx'
+import CaseStudies from './pages/CaseStudies.jsx'
+import Insights from './pages/Insights.jsx'
+import Events from './pages/Events.jsx'
+import Contact from './pages/Contact.jsx'
+import Support from './pages/Support.jsx'
+import Privacy from './pages/Privacy.jsx'
 import ComingSoon from './pages/ComingSoon.jsx'
 
 // Built pages by route. Everything else falls back to a graceful "in progress" page.
@@ -64,6 +71,13 @@ const PAGES = {
   '/industry-solutions/healthcare': Healthcare,
   '/industry-solutions/energy-utilities': EnergyUtilities,
   '/industry-solutions/enterprise': Enterprise,
+  '/partners': Partners,
+  '/case-studies': CaseStudies,
+  '/insights': Insights,
+  '/events': Events,
+  '/contact': Contact,
+  '/support': Support,
+  '/privacy': Privacy,
 }
 
 function titleFromPath(p) {
