@@ -90,6 +90,8 @@ export const ROUTE_FOR = (() => {
     'Data & Identity Security': '/cybersecurity/data-identity-security',
     'Cloud & Infrastructure': '/digital-infrastructure',
     'Security Awareness': '/cybersecurity/email-communication-security',
+    'Network Security': '/cybersecurity/network-infrastructure-security',
+    'Services': '/services/cyber-advisory',
   })
   return m
 })()

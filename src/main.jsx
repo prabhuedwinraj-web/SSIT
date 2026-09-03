@@ -23,6 +23,15 @@ import ManagedSecurity from './pages/ManagedSecurity.jsx'
 import IncidentReadiness from './pages/IncidentReadiness.jsx'
 import ComplianceEnablement from './pages/ComplianceEnablement.jsx'
 import SupportServices from './pages/SupportServices.jsx'
+import DigitalInfrastructureOverview from './pages/DigitalInfrastructureOverview.jsx'
+import HciPrivateCloud from './pages/HciPrivateCloud.jsx'
+import BackupDisasterRecovery from './pages/BackupDisasterRecovery.jsx'
+import UaeEInvoicingSecurity from './pages/UaeEInvoicingSecurity.jsx'
+import Government from './pages/Government.jsx'
+import FinancialServices from './pages/FinancialServices.jsx'
+import Healthcare from './pages/Healthcare.jsx'
+import EnergyUtilities from './pages/EnergyUtilities.jsx'
+import Enterprise from './pages/Enterprise.jsx'
 import ComingSoon from './pages/ComingSoon.jsx'
 
 // Built pages by route. Everything else falls back to a graceful "in progress" page.
@@ -46,6 +55,15 @@ const PAGES = {
   '/services/incident-readiness': IncidentReadiness,
   '/services/compliance-enablement': ComplianceEnablement,
   '/services/support-services': SupportServices,
+  '/digital-infrastructure': DigitalInfrastructureOverview,
+  '/digital-infrastructure/hci-private-cloud': HciPrivateCloud,
+  '/digital-infrastructure/backup-disaster-recovery': BackupDisasterRecovery,
+  '/industry-solutions/uae-e-invoicing-security': UaeEInvoicingSecurity,
+  '/industry-solutions/government': Government,
+  '/industry-solutions/financial-services': FinancialServices,
+  '/industry-solutions/healthcare': Healthcare,
+  '/industry-solutions/energy-utilities': EnergyUtilities,
+  '/industry-solutions/enterprise': Enterprise,
 }
 
 function titleFromPath(p) {
