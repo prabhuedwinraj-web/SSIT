@@ -15,6 +15,14 @@ import DataIdentitySecurity from './pages/DataIdentitySecurity.jsx'
 import ThreatIntelligenceResponse from './pages/ThreatIntelligenceResponse.jsx'
 import SecurityAnalyticsVisibility from './pages/SecurityAnalyticsVisibility.jsx'
 import AISecurity from './pages/AISecurity.jsx'
+import CyberAdvisory from './pages/CyberAdvisory.jsx'
+import SecurityAssessments from './pages/SecurityAssessments.jsx'
+import SecurityArchitecture from './pages/SecurityArchitecture.jsx'
+import ImplementationIntegration from './pages/ImplementationIntegration.jsx'
+import ManagedSecurity from './pages/ManagedSecurity.jsx'
+import IncidentReadiness from './pages/IncidentReadiness.jsx'
+import ComplianceEnablement from './pages/ComplianceEnablement.jsx'
+import SupportServices from './pages/SupportServices.jsx'
 import ComingSoon from './pages/ComingSoon.jsx'
 
 // Built pages by route. Everything else falls back to a graceful "in progress" page.
@@ -30,6 +38,14 @@ const PAGES = {
   '/cybersecurity/threat-intelligence-response': ThreatIntelligenceResponse,
   '/cybersecurity/security-analytics-visibility': SecurityAnalyticsVisibility,
   '/cybersecurity/ai-security': AISecurity,
+  '/services/cyber-advisory': CyberAdvisory,
+  '/services/security-assessments': SecurityAssessments,
+  '/services/security-architecture': SecurityArchitecture,
+  '/services/implementation-integration': ImplementationIntegration,
+  '/services/managed-security': ManagedSecurity,
+  '/services/incident-readiness': IncidentReadiness,
+  '/services/compliance-enablement': ComplianceEnablement,
+  '/services/support-services': SupportServices,
 }
 
 function titleFromPath(p) {
