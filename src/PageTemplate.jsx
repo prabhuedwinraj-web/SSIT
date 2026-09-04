@@ -16,16 +16,15 @@ export default function PageTemplate({ seo, breadcrumb, eyebrow: eb, h1, lede, p
       {/* HERO */}
       <section style={st("position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.07)")}>
         <div style={st("position:absolute;inset:0;background:radial-gradient(70% 60% at 50% 0%,rgba(0,125,220,.16) 0%,rgba(5,5,6,0) 70%);pointer-events:none")}></div>
-        <div style={st("position:relative;max-width:1080px;margin:0 auto;padding:clamp(120px,15vw,168px) clamp(20px,2.6vw,40px) clamp(56px,7vw,86px)")}>
-          {breadcrumb && <div style={st("margin:0 0 18px;font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:rgba(242,245,250,.4)")}>{breadcrumb}</div>}
-          <div style={{ ...eyebrow, display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <div style={st("position:relative;max-width:1080px;margin:0 auto;padding:clamp(120px,15vw,168px) clamp(20px,2.6vw,40px) clamp(56px,7vw,86px);text-align:center")}>
+          <div style={{ ...eyebrow, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
             <span style={st("width:6px;height:6px;border-radius:50%;background:#00baeb;display:block;animation:ssitPulse 2.4s ease-in-out infinite")}></span>
             {eb}
           </div>
-          <h1 style={st("margin:26px 0 0;font-size:clamp(36px,5.2vw,64px);line-height:1.02;letter-spacing:-.045em;font-weight:600;color:#f2f5fa;max-width:16ch;text-wrap:balance")}>{h1}</h1>
-          {lede && <p style={st("margin:26px 0 0;max-width:680px;font-size:19.5px;line-height:1.6;color:rgba(242,245,250,.62);text-wrap:pretty")}>{lede}</p>}
+          <h1 style={st("margin:26px auto 0;font-size:clamp(36px,5.2vw,64px);line-height:1.02;letter-spacing:-.045em;font-weight:600;color:#f2f5fa;max-width:18ch;text-wrap:balance")}>{h1}</h1>
+          {lede && <p style={st("margin:26px auto 0;max-width:680px;font-size:19.5px;line-height:1.6;color:rgba(242,245,250,.62);text-wrap:pretty")}>{lede}</p>}
           {(primary || secondary) && (
-            <div style={st("margin-top:38px;display:flex;gap:12px;flex-wrap:wrap")}>
+            <div style={st("margin-top:38px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center")}>
               {primary && <Link to={primary.to} className="hv-heroPrimary" style={st("background:#f2f5fa;color:#050506;padding:15px 26px;border-radius:11px;font-size:16px;font-weight:600;letter-spacing:-.01em;transition:transform .22s ease,background .22s ease,color .22s ease")}>{primary.label}</Link>}
               {secondary && <Link to={secondary.to} className="hv-heroSecondary" style={st("background:#141518;border:1px solid rgba(255,255,255,.1);color:#f2f5fa;padding:15px 26px;border-radius:11px;font-size:16px;font-weight:500;letter-spacing:-.01em;transition:background .22s ease,border-color .22s ease")}>{secondary.label}</Link>}
             </div>

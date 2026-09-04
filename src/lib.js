@@ -12,4 +12,4 @@ export function st(cssText) {
   return out
 }
 
-export const LOGO = 'assets/sechpoint-logo.svg'
+export const LOGO = '/assets/sechpoint-logo.svg'
