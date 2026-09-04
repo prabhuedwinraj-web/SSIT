@@ -177,16 +177,7 @@ export default function Contact() {
 
           {/* ASIDE */}
           <aside>
-            <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,245,250,.42)")}>Where enquiries go</div>
-            <div style={st("margin-top:22px;display:flex;flex-direction:column;gap:10px")}>
-              {['Consultation request', 'Security assessment request', 'Infrastructure project enquiry', 'Managed security enquiry', 'Partner enquiry', 'Support routing'].map((x) => (
-                <div key={x} className="hv-outcomeRow" style={st("border:1px solid rgba(255,255,255,.1);border-radius:12px;background:#0b0c0f;padding:16px 18px;display:flex;align-items:center;gap:12px")}>
-                  <span aria-hidden="true" style={st("width:7px;height:7px;border-radius:50%;background:#00baeb;flex:none")}></span>
-                  <span style={st("font-size:15px;color:rgba(242,245,250,.86)")}>{x}</span>
-                </div>
-              ))}
-            </div>
-            <div style={st("margin-top:24px;border:1px solid rgba(255,255,255,.1);border-radius:14px;background:rgba(255,255,255,.02);padding:22px 24px")}>
+            <div style={st("border:1px solid rgba(255,255,255,.1);border-radius:14px;background:rgba(255,255,255,.02);padding:22px 24px")}>
               <div style={st("font-size:15px;font-weight:600;color:#f2f5fa")}>SechPoint SSIT</div>
               <dl style={st("margin:14px 0 0;display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:14.5px")}>
                 <dt style={st("color:rgba(242,245,250,.42)")}>Location</dt><dd style={st("margin:0;color:rgba(242,245,250,.86)")}>United Arab Emirates</dd>
