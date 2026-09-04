@@ -81,4 +81,9 @@ a.hv-capCardLight:hover { background: #f6faff !important; border-color: rgba(0,1
   .hero-pad { padding-left: 22px !important; padding-right: 22px !important; }
   .hero-actions { flex-direction: column; width: 100%; }
   .hero-actions a { width: 100%; text-align: center; }
+  /* Full-width action buttons on phones (hero / page CTA / contact submit;
+     never the header, which uses .hv-cta) */
+  a.hv-heroPrimary, a.hv-heroSecondary, button.hv-heroPrimary {
+    width: 100%; justify-content: center; text-align: center;
+  }
 }
