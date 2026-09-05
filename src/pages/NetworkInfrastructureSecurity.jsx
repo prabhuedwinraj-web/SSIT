@@ -5,6 +5,7 @@ export default function NetworkInfrastructureSecurity() {
   return (
     <PageTemplate
       seo="Network & Infrastructure Security | SechPoint SSIT"
+      heroImage="/assets/network-infrastructure-hero.jpg"
       breadcrumb="Cybersecurity / Network & Infrastructure Security"
       eyebrow="Network & Infrastructure Security"
       h1="Make the network an active layer of cyber defence."
