@@ -69,13 +69,13 @@ export default function Contact() {
       {/* HERO */}
       <section style={st("position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.07)")}>
         <div style={st("position:absolute;inset:0;background:radial-gradient(70% 60% at 50% 0%,rgba(0,125,220,.16) 0%,rgba(5,5,6,0) 70%);pointer-events:none")}></div>
-        <div style={st("position:relative;max-width:1080px;margin:0 auto;padding:clamp(120px,15vw,168px) clamp(20px,2.6vw,40px) clamp(48px,6vw,72px)")}>
-          <div style={st(`display:flex;align-items:center;gap:10px;font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:${accent}`)}>
+        <div style={st("position:relative;max-width:1080px;margin:0 auto;padding:clamp(120px,15vw,168px) clamp(20px,2.6vw,40px) clamp(48px,6vw,72px);text-align:center")}>
+          <div style={st(`display:flex;align-items:center;justify-content:center;gap:10px;font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:${accent}`)}>
             <span style={st("width:6px;height:6px;border-radius:50%;background:#00baeb;display:block;animation:ssitPulse 2.4s ease-in-out infinite")}></span>
             Contact
           </div>
-          <h1 style={st("margin:24px 0 0;font-size:clamp(34px,4.8vw,58px);line-height:1.03;letter-spacing:-.045em;font-weight:600;color:#f2f5fa;max-width:20ch;text-wrap:balance")}>Let’s discuss what secure transformation looks like for your organisation.</h1>
-          <p style={st("margin:24px 0 0;max-width:660px;font-size:19px;line-height:1.6;color:rgba(242,245,250,.62);text-wrap:pretty")}>Tell us your priorities and we will connect you with the appropriate SechPoint SSIT specialist.</p>
+          <h1 style={st("margin:24px auto 0;font-size:clamp(34px,4.8vw,58px);line-height:1.03;letter-spacing:-.045em;font-weight:600;color:#f2f5fa;max-width:20ch;text-wrap:balance")}>Let’s discuss what secure transformation looks like for your organisation.</h1>
+          <p style={st("margin:24px auto 0;max-width:660px;font-size:19px;line-height:1.6;color:rgba(242,245,250,.62);text-wrap:pretty")}>Tell us your priorities and we will connect you with the appropriate SechPoint SSIT specialist.</p>
         </div>
       </section>
 
