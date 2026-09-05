@@ -7,7 +7,7 @@ import CtaHighlight from './CtaHighlight.jsx'
 
 const eyebrow = st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,245,250,.42)")
 
-export default function PageTemplate({ seo, breadcrumb, eyebrow: eb, h1, lede, primary, secondary, opening, pillarsLabel, pillars = [], deliver = [], outcomes = [], faqs = [], next, related = [], ctaVariant = 'classic' }) {
+export default function PageTemplate({ seo, breadcrumb, eyebrow: eb, h1, lede, primary, secondary, opening, pillarsLabel, pillars = [], deliver = [], outcomes = [], faqs = [], next, related = [], ctaVariant = 'pixel' }) {
   useEffect(() => { if (seo) document.title = seo }, [seo])
 
   return (
