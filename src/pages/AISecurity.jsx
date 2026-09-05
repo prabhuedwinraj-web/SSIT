@@ -35,6 +35,7 @@ export default function AISecurity() {
       ]}
       next={{ label: 'Request an AI Security Assessment', blurb: 'Speak with SechPoint SSIT to discuss your environment, priorities and next steps.' }}
       related={['Cyber Advisory', 'Data & Identity Security', 'Cloud & Infrastructure']}
+      ctaVariant="pixel"
     />
   )
 }

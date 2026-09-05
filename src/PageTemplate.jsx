@@ -3,10 +3,11 @@ import { st } from './lib.js'
 import { Header, Footer } from './Chrome.jsx'
 import { Link } from './router.jsx'
 import { routeForLabel } from './nav.js'
+import CtaHighlight from './CtaHighlight.jsx'
 
 const eyebrow = st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,245,250,.42)")
 
-export default function PageTemplate({ seo, breadcrumb, eyebrow: eb, h1, lede, primary, secondary, opening, pillarsLabel, pillars = [], deliver = [], outcomes = [], faqs = [], next, related = [] }) {
+export default function PageTemplate({ seo, breadcrumb, eyebrow: eb, h1, lede, primary, secondary, opening, pillarsLabel, pillars = [], deliver = [], outcomes = [], faqs = [], next, related = [], ctaVariant = 'classic' }) {
   useEffect(() => { if (seo) document.title = seo }, [seo])
 
   return (
@@ -112,6 +113,9 @@ export default function PageTemplate({ seo, breadcrumb, eyebrow: eb, h1, lede, p
       )}
 
       {/* CLOSING CTA */}
+      {ctaVariant === 'pixel' ? (
+        <CtaHighlight label={next ? next.label : undefined} blurb={next && next.blurb ? next.blurb : undefined} related={related} />
+      ) : (
       <section style={st("position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.07)")}>
         <div style={st("position:absolute;inset:0;background:radial-gradient(80% 70% at 50% 100%,rgba(0,125,220,.22) 0%,rgba(5,5,6,0) 72%);pointer-events:none")}></div>
         <div style={st("position:relative;max-width:1080px;margin:0 auto;padding:clamp(72px,9vw,110px) clamp(20px,2.6vw,40px);text-align:center")}>
@@ -129,6 +133,7 @@ export default function PageTemplate({ seo, breadcrumb, eyebrow: eb, h1, lede, p
           )}
         </div>
       </section>
+      )}
 
       <Footer />
     </div>
