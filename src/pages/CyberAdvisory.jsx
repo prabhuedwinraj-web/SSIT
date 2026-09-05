@@ -5,6 +5,7 @@ export default function CyberAdvisory() {
   return (
     <PageTemplate
       seo="Cybersecurity Advisory Services UAE | SechPoint SSIT"
+      heroImage="/assets/cyber-advisory-hero.jpg"
       breadcrumb="Services / Cyber Advisory"
       eyebrow="Cyber Advisory"
       h1="Turn cyber risk into a practical business roadmap."

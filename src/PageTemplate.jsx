@@ -7,7 +7,7 @@ import CtaHighlight from './CtaHighlight.jsx'
 
 const eyebrow = st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,245,250,.42)")
 
-export default function PageTemplate({ seo, breadcrumb, eyebrow: eb, h1, lede, primary, secondary, opening, pillarsLabel, pillars = [], deliver = [], outcomes = [], faqs = [], next, related = [], ctaVariant = 'pixel' }) {
+export default function PageTemplate({ seo, breadcrumb, eyebrow: eb, h1, lede, primary, secondary, opening, pillarsLabel, pillars = [], deliver = [], outcomes = [], faqs = [], next, related = [], ctaVariant = 'pixel', heroImage }) {
   useEffect(() => { if (seo) document.title = seo }, [seo])
 
   return (
@@ -16,6 +16,12 @@ export default function PageTemplate({ seo, breadcrumb, eyebrow: eb, h1, lede, p
 
       {/* HERO */}
       <section style={st("position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.07)")}>
+        {heroImage && (
+          <>
+            <img src={heroImage} alt="" aria-hidden="true" style={st("position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.55;pointer-events:none")} />
+            <div style={st("position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,6,.55) 0%,rgba(5,5,6,.7) 55%,rgba(5,5,6,.92) 100%);pointer-events:none")}></div>
+          </>
+        )}
         <div style={st("position:absolute;inset:0;background:radial-gradient(70% 60% at 50% 0%,rgba(0,125,220,.16) 0%,rgba(5,5,6,0) 70%);pointer-events:none")}></div>
         <div style={st("position:relative;max-width:1080px;margin:0 auto;padding:clamp(120px,15vw,168px) clamp(20px,2.6vw,40px) clamp(56px,7vw,86px);text-align:center")}>
           <div style={{ ...eyebrow, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
