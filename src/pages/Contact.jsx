@@ -19,6 +19,16 @@ const CAPABILITIES = ['Endpoint & Device', 'Email & Communication', 'Network & I
 const COUNTRIES = ['United Arab Emirates', 'Saudi Arabia', 'Qatar', 'Kuwait', 'Oman', 'Bahrain', 'Egypt', 'Jordan', 'Morocco', 'Nigeria', 'Kenya', 'Ghana', 'South Africa', 'Tanzania', 'Ethiopia', 'India', 'Pakistan', 'Bangladesh', 'Singapore', 'Malaysia', 'Indonesia', 'United Kingdom', 'United States', 'Other']
 
 const input = st('background:#0d0e11;border:1px solid rgba(255,255,255,.14);border-radius:10px;color:#f2f5fa;font-size:15.5px;padding:13px 14px;min-height:48px')
+// Native select arrows render inconsistently and misaligned; replace with a
+// custom chevron so it sits centered in the field.
+const selectStyle = {
+  ...input,
+  appearance: 'none', WebkitAppearance: 'none', MozAppearance: 'none',
+  background: "#0d0e11 url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' stroke='%2394A3B8' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\") no-repeat right 14px center",
+  backgroundSize: '12px 8px',
+  paddingRight: '40px',
+  cursor: 'pointer',
+}
 const label = st('font-size:14px;font-weight:600;color:rgba(242,245,250,.86)')
 const errStyle = st('margin:0;color:#f2a0a0;font-size:13.5px')
 const accent = '#00baeb'
@@ -81,8 +91,8 @@ export default function Contact() {
 
       {/* FORM + ASIDE */}
       <section id="form" style={st("border-bottom:1px solid rgba(255,255,255,.07)")}>
-        <div style={st("max-width:1180px;margin:0 auto;padding:clamp(56px,7vw,90px) clamp(20px,2.6vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,5vw,72px);align-items:start")}>
-          <div>
+        <div style={st("max-width:1180px;margin:0 auto;padding:clamp(56px,7vw,90px) clamp(20px,2.6vw,40px);display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(40px,5vw,72px);align-items:flex-start")}>
+          <div style={st("flex:1 1 560px;max-width:680px;min-width:0")}>
             <h2 style={st("margin:0;font-size:clamp(24px,2.8vw,34px);letter-spacing:-.03em;font-weight:600;color:#f2f5fa")}>How can we help?</h2>
             <p style={st("margin:16px 0 0;color:rgba(242,245,250,.62);font-size:16.5px;line-height:1.6;text-wrap:pretty")}>Share the business challenge, required capability, country and preferred next step. For sensitive support incidents, use your approved secure support channel rather than this form.</p>
 
@@ -138,7 +148,7 @@ export default function Contact() {
                 </div>
                 <div style={st("display:flex;flex-direction:column;gap:7px")}>
                   <label htmlFor="c-enquiry" style={label}>Enquiry type <span style={{ color: accent }}>*</span></label>
-                  <select id="c-enquiry" name="enquiry" defaultValue="" onBlur={blurField} aria-invalid={inv('enquiry')} style={input}>
+                  <select id="c-enquiry" name="enquiry" defaultValue="" onBlur={blurField} aria-invalid={inv('enquiry')} style={selectStyle}>
                     <option value="">Select enquiry type…</option>
                     {ENQUIRY_TYPES.map((t) => <option key={t}>{t}</option>)}
                   </select>
@@ -146,7 +156,7 @@ export default function Contact() {
                 </div>
                 <div style={st("display:flex;flex-direction:column;gap:7px")}>
                   <label htmlFor="c-cap" style={label}>Capability of interest <span style={st("color:rgba(242,245,250,.42);font-weight:400")}>(optional)</span></label>
-                  <select id="c-cap" name="capability" defaultValue="" style={input}>
+                  <select id="c-cap" name="capability" defaultValue="" style={selectStyle}>
                     <option value="">Select a capability…</option>
                     {CAPABILITIES.map((t) => <option key={t}>{t}</option>)}
                   </select>
@@ -176,7 +186,7 @@ export default function Contact() {
           </div>
 
           {/* ASIDE */}
-          <aside>
+          <aside style={st("flex:0 1 320px;min-width:280px")}>
             <div style={st("border:1px solid rgba(255,255,255,.1);border-radius:14px;background:rgba(255,255,255,.02);padding:22px 24px")}>
               <div style={st("font-size:15px;font-weight:600;color:#f2f5fa")}>SechPoint SSIT</div>
               <dl style={st("margin:14px 0 0;display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:14.5px")}>
