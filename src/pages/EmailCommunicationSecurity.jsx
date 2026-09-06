@@ -5,6 +5,7 @@ export default function EmailCommunicationSecurity() {
   return (
     <PageTemplate
       seo="Email Security & Phishing Protection | SechPoint SSIT"
+      heroImage="/assets/email-communication-hero.jpg"
       breadcrumb="Cybersecurity / Email & Communication Security"
       eyebrow="Email & Communication Security"
       h1="Stop communication threats before they become business incidents."
