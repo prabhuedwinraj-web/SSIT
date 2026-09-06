@@ -5,6 +5,7 @@ export default function AISecurity() {
   return (
     <PageTemplate
       seo="AI Security & LLM Governance | SechPoint SSIT"
+      heroImage="/assets/ai-security-hero.jpg"
       breadcrumb="Cybersecurity / AI Security"
       eyebrow="AI Security"
       h1="Enable AI innovation with security and governance built in."
