@@ -5,6 +5,7 @@ export default function ImplementationIntegration() {
   return (
     <PageTemplate
       seo="Cybersecurity Implementation & Integration UAE | SechPoint SSIT"
+      heroImage="/assets/implementation-integration-hero.jpg"
       breadcrumb="Services / Implementation & Integration"
       eyebrow="Implementation & Integration"
       h1="Make security technologies work together."
