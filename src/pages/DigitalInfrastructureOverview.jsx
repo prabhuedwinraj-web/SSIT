@@ -5,6 +5,7 @@ export default function DigitalInfrastructureOverview() {
   return (
     <PageTemplate
       seo="Secure Digital Infrastructure UAE | SechPoint SSIT"
+      heroImage="/assets/digital-infrastructure-hero.jpg"
       breadcrumb="Digital Infrastructure"
       eyebrow="Digital Infrastructure"
       h1="Infrastructure designed for resilience, security and scale."
