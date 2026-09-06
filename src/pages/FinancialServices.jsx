@@ -5,6 +5,7 @@ export default function FinancialServices() {
   return (
     <PageTemplate
       seo="Financial Services Cybersecurity UAE | SechPoint SSIT"
+      heroImage="/assets/financial-services-hero.jpg"
       breadcrumb="Industry Solutions / Financial Services"
       eyebrow="Financial Services"
       h1="Protect trust across identities, transactions, applications and data."
