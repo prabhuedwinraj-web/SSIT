@@ -5,6 +5,7 @@ export default function ManagedSecurity() {
   return (
     <PageTemplate
       seo="Managed Security Services UAE | SechPoint SSIT"
+      heroImage="/assets/managed-security-hero.jpg"
       breadcrumb="Services / Managed Security"
       eyebrow="Managed Security"
       h1="Extend your security operations with focused expertise."
