@@ -5,6 +5,7 @@ export default function ComplianceEnablement() {
   return (
     <PageTemplate
       seo="Cybersecurity Compliance Enablement UAE | SechPoint SSIT"
+      heroImage="/assets/compliance-enablement-hero.jpg"
       breadcrumb="Services / Compliance Enablement"
       eyebrow="Compliance Enablement"
       h1="Turn compliance requirements into sustainable controls."
