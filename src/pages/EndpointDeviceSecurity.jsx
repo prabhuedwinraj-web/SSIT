@@ -5,6 +5,7 @@ export default function EndpointDeviceSecurity() {
   return (
     <PageTemplate
       seo="Endpoint & Device Security Solutions | SechPoint SSIT"
+      heroImage="/assets/endpoint-device-hero.jpg"
       breadcrumb="Cybersecurity / Endpoint & Device Security"
       eyebrow="Endpoint & Device Security"
       h1="Protect every endpoint without losing operational control."
