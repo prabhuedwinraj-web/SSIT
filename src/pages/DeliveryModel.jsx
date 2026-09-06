@@ -5,6 +5,7 @@ export default function DeliveryModel() {
   return (
     <PageTemplate
       seo="Cybersecurity Delivery Model | SechPoint SSIT"
+      heroImage="/assets/delivery-model-hero.jpg"
       breadcrumb="Company / Delivery Model"
       eyebrow="Delivery Model"
       h1="From discovery to measurable improvement."
