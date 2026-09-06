@@ -5,6 +5,7 @@ export default function SecurityAnalyticsVisibility() {
   return (
     <PageTemplate
       seo="SIEM, XDR & Security Analytics | SechPoint SSIT"
+      heroImage="/assets/security-analytics-hero.jpg"
       breadcrumb="Cybersecurity / Security Analytics & Visibility"
       eyebrow="Security Analytics & Visibility"
       h1="Turn security data into decisions your team can act on."
