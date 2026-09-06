@@ -5,6 +5,7 @@ export default function DataIdentitySecurity() {
   return (
     <PageTemplate
       seo="Data & Identity Security Solutions | SechPoint SSIT"
+      heroImage="/assets/data-identity-hero.jpg"
       breadcrumb="Cybersecurity / Data & Identity Security"
       eyebrow="Data & Identity Security"
       h1="Protect sensitive data by controlling who can access it and why."
