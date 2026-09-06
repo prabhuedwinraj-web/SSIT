@@ -5,6 +5,7 @@ export default function SecurityArchitecture() {
   return (
     <PageTemplate
       seo="Cybersecurity Architecture Services | SechPoint SSIT"
+      heroImage="/assets/security-architecture-hero.jpg"
       breadcrumb="Services / Security Architecture"
       eyebrow="Security Architecture"
       h1="Design security as an integrated system."
