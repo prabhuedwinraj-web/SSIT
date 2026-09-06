@@ -5,6 +5,7 @@ export default function EnergyUtilities() {
   return (
     <PageTemplate
       seo="Energy & Utilities Cybersecurity UAE | SechPoint SSIT"
+      heroImage="/assets/energy-utilities-hero.jpg"
       breadcrumb="Industry Solutions / Energy & Utilities"
       eyebrow="Energy & Utilities"
       h1="Build cyber resilience around critical operations."
