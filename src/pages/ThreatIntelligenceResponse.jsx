@@ -5,6 +5,7 @@ export default function ThreatIntelligenceResponse() {
   return (
     <PageTemplate
       seo="Threat Intelligence & Threat Hunting | SechPoint SSIT"
+      heroImage="/assets/threat-intelligence-hero.jpg"
       breadcrumb="Cybersecurity / Threat Intelligence, Hunting & Response"
       eyebrow="Threat Intelligence, Hunting & Response"
       h1="Move from threat information to informed action."
