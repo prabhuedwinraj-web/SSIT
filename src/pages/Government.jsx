@@ -5,6 +5,7 @@ export default function Government() {
   return (
     <PageTemplate
       seo="Government Cybersecurity & System Integration UAE | SechPoint SSIT"
+      heroImage="/assets/government-hero.jpg"
       breadcrumb="Industry Solutions / Government"
       eyebrow="Government"
       h1="Secure digital public services with resilience and trust."
