@@ -5,6 +5,7 @@ export default function HciPrivateCloud() {
   return (
     <PageTemplate
       seo="HCI, Private Cloud & Virtualisation UAE | SechPoint SSIT"
+      heroImage="/assets/hci-private-cloud-hero.jpg"
       breadcrumb="Digital Infrastructure / HCI, Private Cloud & Virtualisation"
       eyebrow="HCI, Private Cloud & Virtualisation"
       h1="Simplify infrastructure without compromising control."
