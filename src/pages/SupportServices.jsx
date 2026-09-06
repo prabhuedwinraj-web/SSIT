@@ -5,6 +5,7 @@ export default function SupportServices() {
   return (
     <PageTemplate
       seo="Cybersecurity Support Services | SechPoint SSIT"
+      heroImage="/assets/support-services-hero.jpg"
       breadcrumb="Services / Support Services"
       eyebrow="Support Services"
       h1="Protect the value of your technology investment."
