@@ -5,6 +5,7 @@ export default function SecurityAssessments() {
   return (
     <PageTemplate
       seo="Cybersecurity Assessment & Gap Analysis UAE | SechPoint SSIT"
+      heroImage="/assets/security-assessments-hero.jpg"
       breadcrumb="Services / Security Assessments"
       eyebrow="Security Assessments"
       h1="Understand your exposure. Prioritise what matters."
