@@ -5,6 +5,7 @@ export default function IncidentReadiness() {
   return (
     <PageTemplate
       seo="Cyber Incident Readiness & Response UAE | SechPoint SSIT"
+      heroImage="/assets/incident-readiness-hero.jpg"
       breadcrumb="Services / Incident Readiness & Response"
       eyebrow="Incident Readiness & Response"
       h1="Prepare before an incident tests the business."
