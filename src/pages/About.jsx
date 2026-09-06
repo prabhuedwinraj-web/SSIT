@@ -40,7 +40,7 @@ export default function About() {
 
       {/* HERO */}
       <section style={st("position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.07)")}>
-        <img src="/assets/cyber-advisory-hero.jpg" alt="" aria-hidden="true" style={st("position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.5;pointer-events:none")} />
+        <img src="/assets/about-hero.jpg" alt="" aria-hidden="true" style={st("position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.5;pointer-events:none")} />
         <div style={st("position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,6,.55) 0%,rgba(5,5,6,.72) 55%,rgba(5,5,6,.94) 100%);pointer-events:none")}></div>
         <div style={st("position:absolute;inset:0;background:radial-gradient(70% 60% at 50% 0%,rgba(0,125,220,.18) 0%,rgba(5,5,6,0) 70%);pointer-events:none")}></div>
         <div style={st("position:relative;max-width:1080px;margin:0 auto;padding:clamp(120px,15vw,168px) clamp(20px,2.6vw,40px) clamp(56px,7vw,86px);text-align:center")}>
