@@ -5,6 +5,7 @@ export default function BackupDisasterRecovery() {
   return (
     <PageTemplate
       seo="Backup & Disaster Recovery Solutions UAE | SechPoint SSIT"
+      heroImage="/assets/backup-disaster-recovery-hero.jpg"
       breadcrumb="Digital Infrastructure / Backup & Disaster Recovery"
       eyebrow="Backup & Disaster Recovery"
       h1="Recovery is a business capability — not only a backup job."
