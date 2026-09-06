@@ -5,6 +5,7 @@ export default function UaeEInvoicingSecurity() {
   return (
     <PageTemplate
       seo="UAE e-Invoicing Cybersecurity & Integration | SechPoint SSIT"
+      heroImage="/assets/uae-e-invoicing-hero.jpg"
       breadcrumb="Industry Solutions / UAE e-Invoicing Security"
       eyebrow="UAE e-Invoicing Security"
       h1="Secure the complete e-Invoicing value chain."
