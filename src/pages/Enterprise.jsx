@@ -5,6 +5,7 @@ export default function Enterprise() {
   return (
     <PageTemplate
       seo="Enterprise Cybersecurity & System Integration UAE | SechPoint SSIT"
+      heroImage="/assets/enterprise-hero.jpg"
       breadcrumb="Industry Solutions / Enterprise"
       eyebrow="Enterprise"
       h1="Secure growth across users, applications, data and infrastructure."
