@@ -5,6 +5,7 @@ export default function Healthcare() {
   return (
     <PageTemplate
       seo="Healthcare Cybersecurity & Infrastructure UAE | SechPoint SSIT"
+      heroImage="/assets/healthcare-hero.jpg"
       breadcrumb="Industry Solutions / Healthcare"
       eyebrow="Healthcare"
       h1="Protect care delivery, patient data and connected operations."
