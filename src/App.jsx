@@ -247,7 +247,6 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
                   <span style={st(`position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,#007ddc,#01f1f8);transform:scaleY(${on ? 1 : 0});transform-origin:top;transition:transform .45s cubic-bezier(.2,.7,.2,1)`)}></span>
                   <span style={st("display:flex;align-items:baseline;gap:12px")}>
                     <span style={st(`font:500 34px 'IBM Plex Mono',monospace;letter-spacing:-.04em;color:${on ? accent : 'rgba(242,245,250,.24)'};transition:color .35s ease;line-height:1`)}>{'0' + (i + 1)}</span>
-                    <span style={st("font:500 10.5px 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,245,250,.34)")}>Pillar</span>
                   </span>
                   <span style={st(`font-size:19.5px;line-height:1.22;letter-spacing:-.028em;font-weight:600;color:${on ? '#f2f5fa' : 'rgba(242,245,250,.5)'};transition:color .35s ease`)}>{p.title}</span>
                 </button>
@@ -258,7 +257,7 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
           <div style={st("background:#0b0c0f;border:1px solid rgba(255,255,255,.09);border-radius:20px;padding:clamp(30px,3vw,52px);position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:460px")}>
             <div style={st("position:absolute;inset:0;background:radial-gradient(70% 70% at 100% 0%,rgba(0,125,220,.16) 0%,rgba(11,12,15,0) 68%);pointer-events:none")}></div>
             <div style={st("position:relative;display:flex;flex-direction:column;gap:22px;flex:1")}>
-              <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.18em;color:#00baeb")}>{'PILLAR ' + (pillar + 1)}</div>
+              <div style={st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.18em;color:#00baeb")}>OUR APPROACH</div>
               <h3 style={st("margin:0;font-size:clamp(30px,3.4vw,46px);line-height:1.04;letter-spacing:-.04em;font-weight:600;max-width:760px;text-wrap:balance")}>{PILLAR_DATA[pillar].title}</h3>
               <p style={st("margin:0;font-size:17.5px;line-height:1.6;color:rgba(242,245,250,.6);max-width:680px;text-wrap:pretty")}>{PILLAR_DATA[pillar].body}</p>
 
