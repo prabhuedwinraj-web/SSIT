@@ -296,7 +296,7 @@ export default function App({ accent = '#00baeb', lifecycleAutoplay = true, show
                       const color = i === step ? accent : i < step ? 'rgba(242,245,250,.72)' : 'rgba(242,245,250,.42)'
                       return (
                         <div key={i} style={st("display:flex;flex-direction:column;align-items:flex-start;gap:14px")}>
-                          <span style={st(`width:16px;height:16px;border-radius:50%;background:#0b0c0f;border:2px solid ${dot};box-shadow:${glow};display:block;transition:border-color .5s ease,box-shadow .5s ease`)}></span>
+                          <span style={st(`position:relative;z-index:1;width:16px;height:16px;border-radius:50%;background:#0b0c0f;border:2px solid ${dot};box-shadow:${glow};display:block;transition:border-color .5s ease,box-shadow .5s ease`)}></span>
                           <span style={st(`font:500 13px 'IBM Plex Mono',monospace;letter-spacing:.04em;color:${color};transition:color .5s ease`)}>{s.name.toUpperCase()}</span>
                           <span style={st("font-size:13px;line-height:1.35;color:rgba(242,245,250,.4);max-width:110px")}>{s.note}</span>
                         </div>
