@@ -51,6 +51,8 @@ a.hv-viewCap:hover { color: #01f1f8 !important; }
 a.hv-deliveryModel:hover { background: rgba(255,255,255,.06) !important; }
 
 a.hv-capCard:hover { background: #12141a !important; border-color: rgba(0,186,235,.45) !important; }
+li.hv-capCard { transition: background .25s ease, border-color .25s ease, transform .25s ease; }
+li.hv-capCard:hover { background: #101217; border-color: rgba(0,186,235,.4); transform: translateY(-2px); }
 
 .hv-outcomeRow { transition: background .3s ease; }
 .hv-outcomeRow:hover { background: rgba(0,125,220,.06); }

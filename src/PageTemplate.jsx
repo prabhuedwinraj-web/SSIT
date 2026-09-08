@@ -1,4 +1,11 @@
 import React, { useEffect } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faClipboardCheck, faSitemap, faChartLine, faTriangleExclamation, faScaleBalanced,
+  faUserShield, faLock, faDatabase, faRotateLeft, faCloud, faNetworkWired, faEnvelope,
+  faCode, faDiagramProject, faHeadset, faBug, faGraduationCap, faServer, faShieldHalved,
+  faMagnifyingGlass, faGears, faCircleCheck,
+} from '@fortawesome/free-solid-svg-icons'
 import { st } from './lib.js'
 import { Header, Footer } from './Chrome.jsx'
 import { Link } from './router.jsx'
@@ -6,6 +13,36 @@ import { routeForLabel } from './nav.js'
 import CtaHighlight from './CtaHighlight.jsx'
 
 const eyebrow = st("font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,245,250,.42)")
+
+// Pick a relevant icon for a "what we deliver" line by keyword. First match wins;
+// anything unmatched falls back to a neutral check so every card looks intentional.
+const DELIVER_ICON_RULES = [
+  [/adversar|abuse|penetrat|red[ -]team|vulnerab|simulation|\btest/i, faBug],
+  [/assess|review|audit|gap|maturity|posture|due diligence/i, faClipboardCheck],
+  [/architect|framework|design|roadmap|blueprint|target[ -]state|reference model/i, faSitemap],
+  [/analytic|monitor|visib|telemetry|logging|siem|\bxdr|dashboard|reporting/i, faChartLine],
+  [/incident|response|readiness|breach|forensic|playbook/i, faTriangleExclamation],
+  [/complian|governanc|regulat|\bpolicy|lawful|consent|rights|retention/i, faScaleBalanced],
+  [/identit|access|privileg|\biam\b|authenticat|\bsso\b|\bmfa\b/i, faUserShield],
+  [/encrypt|data protection|\bdlp\b|privacy|key management|secrets/i, faLock],
+  [/\bdata\b|classification|catalog/i, faDatabase],
+  [/recover|disaster|replicat|continuity|resilien|failover|snapshot/i, faRotateLeft],
+  [/cloud/i, faCloud],
+  [/network|segment|connectivity|firewall|traffic|routing/i, faNetworkWired],
+  [/email|communicat|phishing|messaging|collaboration/i, faEnvelope],
+  [/applic|\bapi\b|software|\bcode\b|devsecops/i, faCode],
+  [/integrat|orchestrat|workflow|interoperab|migrat|transition|exchange/i, faDiagramProject],
+  [/manage|support|service desk|ticket|help ?desk|maintenance/i, faHeadset],
+  [/train|awareness|enablement|education|professional service/i, faGraduationCap],
+  [/infrastructure|server|data cent|\bhci\b|virtualis|hosting|platform|workload/i, faServer],
+  [/discover|hunt|threat intel|search|stakeholder|workshop/i, faMagnifyingGlass],
+  [/implement|configur|deploy|operat|build|provision|onboarding/i, faGears],
+  [/threat|malware|defen|endpoint|device|hardening|protection controls|secure/i, faShieldHalved],
+]
+function iconForDeliver(text) {
+  for (const [re, icon] of DELIVER_ICON_RULES) if (re.test(text)) return icon
+  return faCircleCheck
+}
 
 export default function PageTemplate({ seo, breadcrumb, eyebrow: eb, h1, lede, primary, secondary, opening, pillarsLabel, pillars = [], deliver = [], outcomes = [], faqs = [], next, related = [], ctaVariant = 'pixel', heroImage }) {
   useEffect(() => { if (seo) document.title = seo }, [seo])
@@ -72,10 +109,13 @@ export default function PageTemplate({ seo, breadcrumb, eyebrow: eb, h1, lede, p
         <section style={st("border-bottom:1px solid rgba(255,255,255,.07)")}>
           <div style={st("max-width:1440px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,2.6vw,40px)")}>
             <div style={eyebrow}>What we deliver</div>
-            <ul className="tmpl-grid" style={st("margin:34px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden")}>
+            <ul className="tmpl-grid" style={st("margin:34px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px")}>
               {deliver.map((d) => (
-                <li key={d} className="hv-cap" style={st("background:#0b0c0f;padding:22px 24px;font-size:16px;color:rgba(242,245,250,.86);display:flex;gap:12px;align-items:baseline;transition:background .2s ease")}>
-                  <span aria-hidden="true" style={st("color:#00baeb;font-size:11px")}>◆</span>{d}
+                <li key={d} className="hv-capCard" style={st("background:#0b0c0f;border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:22px 22px;display:flex;gap:15px;align-items:center")}>
+                  <span aria-hidden="true" style={st("flex:none;width:44px;height:44px;border-radius:11px;background:rgba(0,186,235,.1);border:1px solid rgba(0,186,235,.22);display:flex;align-items:center;justify-content:center")}>
+                    <FontAwesomeIcon icon={iconForDeliver(d)} style={{ fontSize: '18px', color: '#00baeb' }} />
+                  </span>
+                  <span style={st("font-size:16px;line-height:1.4;color:rgba(242,245,250,.88)")}>{d}</span>
                 </li>
               ))}
             </ul>
